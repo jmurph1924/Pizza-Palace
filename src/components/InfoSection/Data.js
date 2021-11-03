@@ -8,8 +8,8 @@ export const homeObjOne = {
     description: 'Get access to our exclusive app that allows you to send unlimited transactions without getting charged any fees',
     buttonLabel: 'Get started',
     imgStart: false,
-    img: require('../../images/svg-1.png'),
-    alt: 'Car',
+    img: require('../../images/svg-1.svg'),
+    alt: 'Pizza',
     dark: true,
     primary: true,
     darkText: false

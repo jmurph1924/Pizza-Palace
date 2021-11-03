@@ -1,11 +1,11 @@
-import React from 'react'
-import { Button } from '../ButtonElements'
-
+import React from 'react';
+import { Button } from '../ButtonElements';
 import { InfoContainer, InfoWrapper, InfoRow, Column1, 
     Column2, TextWrapper, TopLine, Heading, Subtitle, 
-    BtnWrap, ImgWrap, Img} from './InfoElements'
+    BtnWrap, ImgWrap, Img} from './InfoElements';
 
-export const InfoSection = (lightBg, id, imgStart, topLine, lightText, headLine, darkText, description, buttonLabel, img, alt) => {
+
+export const InfoSection = ({lightBg, id, imgStart, topLine, lightText, headLine, darkText, description, buttonLabel, img, alt}) => {
     return (
         <>
             <InfoContainer lightBg = {lightBg} id={id}>
