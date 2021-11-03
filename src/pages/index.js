@@ -1,9 +1,13 @@
 import React, {useState} from 'react';
 import Sidebar from '../components/Sidebar';
 import Navbar from '../components/Navbar';
-import { homeObjOne, homeObjTwo } from '../components/InfoSection/Data';
+import { homeObjOne } from '../components/InfoSection/Data';
 import HeroSection from '../components/HeroSection';
 import InfoSection from '../components/InfoSection';
+import CrustSection from '../components/Crust';
+import { crustObjOne } from '../components/Crust/Data';
+import SauceSection from '../components/Sauce';
+import { sauceObjOne } from '../components/Sauce/Data';
 
 
 const Home = () => {
@@ -19,7 +23,8 @@ const Home = () => {
           <Navbar toggle = {toggle}/>  
           <HeroSection />
           <InfoSection {...homeObjOne}/>
-          <InfoSection {...homeObjTwo}/>
+          <CrustSection {...crustObjOne}/>
+          <SauceSection {...sauceObjOne}/>
         </>
     )
 }

@@ -1,17 +1,19 @@
 export const homeObjOne = {
-    id: 'Sizes',
+    id: 'sizes',
     lightBg: true,
     lightText: false,
     lighttextDesc: false,
     headline: 'Sizes',
     description: 'Get access to our exclusive app that allows you to send unlimited transactions whitout getting charged any fees.',
-    buttonLabel: 'Get started',
+    buttonLabel1: 'Large',
+    buttonLabel2: 'Medium',
+    buttonLabel3: 'Small',
     imgStart: false,
     img: require('../../images/Pizza.png').default,
     alt: 'Pizza',
-    dark: true,
-    primary: true,
-    darkText: false
+    dark: false,
+    primary: false,
+    darkText: true
   };
   
   export const homeObjTwo = {

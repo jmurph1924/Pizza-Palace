@@ -1,8 +1,8 @@
 import React from 'react'
 import { Button } from '../ButtonElements'
-import { InfoContainer, InfoWrapper, InfoRow, Column1, Column2, TextWrapper, TopLine, Heading, Subtitle, BtnWrap, ImgWrap, Img } from './InfoElements';
+import { InfoContainer, InfoWrapper, InfoRow, Column1, Column2, TextWrapper, TopLine, Heading, Subtitle, BtnWrap, ImgWrap, Img } from './CrustElements';
 
-const InfoSection = ({lightBg, id, imgStart, topLine, lightText, headline, darkText, description, buttonLabel1, buttonLabel2, buttonLabel3, alt, img, primary, dark, dark2 }) => {
+const CrustSection = ({lightBg, id, imgStart, topLine, lightText, headline, darkText, buttonLabel1, buttonLabel2, buttonLabel3, buttonLabel4, alt, img, primary, dark, dark2 }) => {
   return (
     <>
       <InfoContainer lightBg={lightBg} id={id}>
@@ -11,7 +11,6 @@ const InfoSection = ({lightBg, id, imgStart, topLine, lightText, headline, darkT
             <Column1>
               <TextWrapper>
                 <Heading lightText={lightText}>{headline}</Heading>
-                <Subtitle darkText={darkText}>{description}</Subtitle>
                 <BtnWrap>
                   <Button to='home'
                   smooth={true}
@@ -51,6 +50,19 @@ const InfoSection = ({lightBg, id, imgStart, topLine, lightText, headline, darkT
                   >{buttonLabel3}
                   </Button>
                 </BtnWrap>
+                <BtnWrap>
+                  <Button to='home'
+                  smooth={true}
+                  duration={500}
+                  spy={true}
+                  exact='true'
+                  offset={-80}
+                  primary={primary ? 1 : 0}
+                  dark={dark ? 1 : 0}
+                  dark2={dark2 ? 1 : 0}
+                  >{buttonLabel4}
+                  </Button>
+                </BtnWrap>
               </TextWrapper>
             </Column1>
             <Column2>
@@ -65,4 +77,4 @@ const InfoSection = ({lightBg, id, imgStart, topLine, lightText, headline, darkT
   )
 }
 
-export default InfoSection
+export default CrustSection
