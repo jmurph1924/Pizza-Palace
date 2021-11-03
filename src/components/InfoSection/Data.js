@@ -3,7 +3,7 @@ export const homeObjOne = {
     lightBg: true,
     lightText: false,
     lighttextDesc: false,
-    headline: 'Sizes',
+    headline: 'Size',
     description: 'Get access to our exclusive app that allows you to send unlimited transactions whitout getting charged any fees.',
     buttonLabel1: 'Large',
     buttonLabel2: 'Medium',

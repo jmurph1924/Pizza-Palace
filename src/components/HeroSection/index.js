@@ -26,7 +26,7 @@ const HeroSection = () => {
                    Italian Style Delicacies
                 </HeroH1>
                 <HeroP>
-                    Sign in or Sign up for Rewards
+                    Login or Sign up for Rewards
                 </HeroP>
                 <HeroBtnWrapper>
                     <Button to="signin" onMouseEnter = {onHover} onMouseLeave = {onHover}>

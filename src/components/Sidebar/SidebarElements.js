@@ -69,6 +69,7 @@ export const SidebarLinker = styled(LinkS)`
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-bottom: 40px;
     font-size: 1.2rem;
     text-decoration: none;
     list-style: none;
@@ -86,6 +87,7 @@ export const SidebarLinker = styled(LinkS)`
 export const SideBtnWrap = styled.div`
     display: flex;
     justify-content: center;
+    padding: 50px;
 `
 
 export const SidebarRoute = styled(LinkR)`

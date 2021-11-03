@@ -12,6 +12,9 @@ const Sidebar = ({isOpen, toggle}) => {
                     <SidebarLink to='buildpizza' onClick={toggle}>
                         Build Pizza
                     </SidebarLink>
+                    <SidebarLinker to='sizes' onClick={toggle}>
+                        Size
+                    </SidebarLinker>
                     <SidebarLinker to='crust' onClick={toggle}>
                         Crust
                     </SidebarLinker>
@@ -24,12 +27,12 @@ const Sidebar = ({isOpen, toggle}) => {
                     <SidebarLinker to='toppings' onClick={toggle}>
                         Toppings
                     </SidebarLinker>
-                    <SidebarLink to='beverages' onClick={toggle}>
+                    <SidebarLinker to='beverages' onClick={toggle}>
                         Beverages
-                    </SidebarLink>
+                    </SidebarLinker>
                 </SidebarMenu>
                 <SideBtnWrap>
-                    <SidebarRoute to="/login">Login</SidebarRoute>
+                    <SidebarRoute to="/signin">Login</SidebarRoute>
                 </SideBtnWrap>
             </SidebarWrapper>
         </SidebarContainer>
