@@ -10,6 +10,12 @@ const HeroSection = () => {
         setHover(!hover)
     }
 
+    const [hover2, setHover2] = useState(false)
+
+    const onHover2 = () => {
+        setHover2(!hover2)
+    }
+
     return (
         <HeroContainer>
             <HeroBg>
@@ -20,11 +26,16 @@ const HeroSection = () => {
                    Italian Style Delicacies
                 </HeroH1>
                 <HeroP>
-                    Sign in for Rewards
+                    Sign in or Sign up for Rewards
                 </HeroP>
                 <HeroBtnWrapper>
                     <Button to="signin" onMouseEnter = {onHover} onMouseLeave = {onHover}>
                         Login {hover ? <ArrowForward /> : <ArrowRight />}
+                    </Button> 
+                </HeroBtnWrapper>
+                <HeroBtnWrapper>
+                    <Button to="signup" onMouseEnter = {onHover2} onMouseLeave = {onHover2}>
+                        Sign Up {hover2 ? <ArrowForward /> : <ArrowRight />}
                     </Button> 
                 </HeroBtnWrapper>
             </HeroContent>
