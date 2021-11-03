@@ -1,0 +1,21 @@
+export const toppingsObjOne = {
+    id: 'toppings',
+    lightBg: true,
+    lightText: false,
+    lighttextDesc: false,
+    headline: 'Toppings',
+    buttonLabel1: 'Pepperoni',
+    buttonLabel2: 'Sausage',
+    buttonLabel3: 'Chicken',
+    buttonLabel4: 'Peppers',
+    buttonLabel5: 'Black Olives',
+    buttonLabel6: 'Garlic',
+    buttonLabel7: 'Onions',
+    buttonLabel8: 'Diced Tomatoes',
+    imgStart: true,
+    img: require('../../images/Pizza4.png').default,
+    alt: 'Pizza',
+    dark: false,
+    primary: false,
+    darkText: true
+  };

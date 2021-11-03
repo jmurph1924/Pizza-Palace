@@ -8,7 +8,7 @@ export const sauceObjOne = {
     buttonLabel2: 'Alfredo',
     buttonLabel3: 'BBQ',
     imgStart: false,
-    img: require('../../images/pizza3.png').default,
+    img: require('../../images/Pizza2.png').default,
     alt: 'Pizza',
     dark: false,
     primary: false,
