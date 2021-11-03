@@ -10,6 +10,8 @@ import SauceSection from '../components/Sauce';
 import { sauceObjOne } from '../components/Sauce/Data';
 import ToppingsSection from '../components/Toppings';
 import { toppingsObjOne } from '../components/Toppings/Data';
+import BeveragesSection from '../components/Beverages';
+import { beveragesObjOne } from '../components/Beverages/Data';
 
 
 const Home = () => {
@@ -28,6 +30,7 @@ const Home = () => {
           <CrustSection {...crustObjOne}/>
           <SauceSection {...sauceObjOne}/>
           <ToppingsSection {...toppingsObjOne}/>
+          <BeveragesSection {...beveragesObjOne} />
         </>
     )
 }
