@@ -18,9 +18,6 @@ const Sidebar = ({isOpen, toggle}) => {
                     <SidebarLinker to='crust' onClick={toggle}>
                         Crust
                     </SidebarLinker>
-                    <SidebarLinker to='cheese' onClick={toggle}>
-                        Cheese
-                    </SidebarLinker>
                     <SidebarLinker to='sauce' onClick={toggle}>
                         Sauce
                     </SidebarLinker>

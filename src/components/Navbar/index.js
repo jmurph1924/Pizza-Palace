@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import {FaBars} from 'react-icons/fa';
 import {Nav, NavbarContainer, NavLogo, MobileIcon, NavMenu, NavItem, NavLinks, NavBtn, NavBtnLink} from './NavbarElements';
-import Dropdown from './Dropdown';
+import Dropdown2 from './Dropdown2';
 
 const Navbar = ({toggle}) => {
 
@@ -39,7 +39,7 @@ const Navbar = ({toggle}) => {
                   onMouseLeave={onMouseLeave}
                   >
                     <NavLinks to="buildpizza">Build a Pizza</NavLinks>
-                    {dropdown && <Dropdown />}
+                    {dropdown && <Dropdown2 />}
                   </NavItem>
                 </NavMenu>
                 <NavBtn>
