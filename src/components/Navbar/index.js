@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import {FaBars} from 'react-icons/fa';
 import {Nav, NavbarContainer, NavLogo, MobileIcon, NavMenu, NavItem, NavLinks, NavBtn, NavBtnLink} from './NavbarElements';
-import Dropdown2 from './Dropdown2';
+import Dropdown from './Dropdown';
 
 const Navbar = ({toggle}) => {
 
-    const [click, setClick] = useState(false);
     const [dropdown, setDropdown] = useState(false);
 
 
@@ -29,7 +28,7 @@ const Navbar = ({toggle}) => {
       <>
         <Nav>
             <NavbarContainer>
-                <NavLogo to='/'>Pizza Palace</NavLogo>
+                <NavLogo to= "home">Pizza Palace</NavLogo>
                 <MobileIcon onClick={toggle}>
                   <FaBars />
                 </MobileIcon>
@@ -39,7 +38,7 @@ const Navbar = ({toggle}) => {
                   onMouseLeave={onMouseLeave}
                   >
                     <NavLinks to="buildpizza">Build a Pizza</NavLinks>
-                    {dropdown && <Dropdown2 />}
+                    {dropdown && <Dropdown />}
                   </NavItem>
                 </NavMenu>
                 <NavBtn>

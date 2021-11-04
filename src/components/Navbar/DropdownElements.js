@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import {Link as LinkS} from 'react-scroll';
-import {FaTimes} from 'react-icons/fa';
 
 export const DropdownContainer = styled.aside`
     background: rgba(0,0,0,0.80);

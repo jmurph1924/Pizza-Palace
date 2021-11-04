@@ -1,35 +1,28 @@
-import React, { useState } from 'react';
-import { MenuItems } from './MenuItems';
-import './Dropdown.css';
-import { Link } from 'react-router-dom';
+import React from 'react';
+import { DropdownContainer, DropdownLinker, DropdownWrapper} from './DropdownElements';
 
-function Dropdown() {
-  const [click, setClick] = useState(false);
-
-  const handleClick = () => setClick(!click);
-
-  return (
-    <>
-      <ul
-        onClick={handleClick}
-        className={click ? 'dropdown-menu clicked' : 'dropdown-menu'}
-      >
-        {MenuItems.map((item, index) => {
-          return (
-            <li key={index}>
-              <Link
-                className={item.cName}
-                to={item.path}
-                onClick={() => setClick(false)}
-              >
-                {item.title}
-              </Link>
-            </li>
-          );
-        })}
-      </ul>
-    </>
-  );
+const Dropdown = ({isOpen, toggle}) => {
+    return (
+        <DropdownContainer isOpen={isOpen} onClick={toggle}>
+            <DropdownWrapper>
+                    <DropdownLinker to='sizes' onClick={toggle}>
+                        Size
+                    </DropdownLinker>
+                    <DropdownLinker to='crust' onClick={toggle}>
+                        Crust
+                    </DropdownLinker>
+                    <DropdownLinker to='sauce' onClick={toggle}>
+                        Sauce
+                    </DropdownLinker>
+                    <DropdownLinker to='toppings' onClick={toggle}>
+                        Toppings
+                    </DropdownLinker>
+                    <DropdownLinker to='beverages' onClick={toggle}>
+                        Beverages
+                    </DropdownLinker>
+            </DropdownWrapper>
+        </DropdownContainer>
+    )
 }
 
-export default Dropdown;
+export default Dropdown
