@@ -1,14 +1,15 @@
 .dropdown-menu {
-    background: red;
+    background: rgba(0,0,0,0.6);
+    margin-left: -140px;
     width: 200px;
     position: absolute;
     top: 80px;
     list-style: none;
-    text-align: start;
+    text-align: center;
   }
   
   .dropdown-menu li {
-    background: #000000;
+    background: rgba(0,0,0,0.6);
     cursor: pointer;
   }
   

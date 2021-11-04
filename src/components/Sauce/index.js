@@ -2,7 +2,7 @@ import React from 'react'
 import { Button } from '../ButtonElements'
 import { InfoContainer, InfoWrapper, InfoRow, Column1, Column2, TextWrapper, Heading, BtnWrap, ImgWrap, Img } from './SauceElements';
 
-const SauceSection = ({lightBg, id, imgStart, topLine, lightText, headline, darkText, buttonLabel1, buttonLabel2, buttonLabel3, buttonLabel4, alt, img, primary, dark, dark2 }) => {
+const SauceSection = ({lightBg, id, imgStart, lightText, headline, buttonLabel1, buttonLabel2, buttonLabel3, alt, img, primary, dark, dark2 }) => {
   return (
     <>
       <InfoContainer lightBg={lightBg} id={id}>

@@ -18,5 +18,10 @@ export const MenuItems = [
       title: 'Toppings',
       path: '/toppings',
       cName: 'dropdown-link'
+    },
+    {
+        title: 'Beverages',
+        path: '/beverages',
+        cName: 'dropdown-link'
     }
   ];
