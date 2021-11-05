@@ -29,7 +29,7 @@ const HeroSection = () => {
                     Login or Sign up for Rewards
                 </HeroP>
                 <HeroBtnWrapper>
-                    <Button to="signin" onMouseEnter = {onHover} onMouseLeave = {onHover}>
+                    <Button to="/signin" onMouseEnter = {onHover} onMouseLeave = {onHover}>
                         Login {hover ? <ArrowForward /> : <ArrowRight />}
                     </Button> 
                 </HeroBtnWrapper>
