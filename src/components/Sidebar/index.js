@@ -9,7 +9,7 @@ const Sidebar = ({isOpen, toggle}) => {
             </Icon>
             <SidebarWrapper>
                 <SidebarMenu>
-                    <SidebarLink to='buildpizza' onClick={toggle}>
+                    <SidebarLink to='/' onClick={toggle}>
                         Build Pizza
                     </SidebarLink>
                     <SidebarLinker to='sizes' onClick={toggle}>

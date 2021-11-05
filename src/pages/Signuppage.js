@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
 import Sidebar from '../components/Sidebar';
 import Navbar from '../components/Navbar';
-import SignIn from '../components/SignIn';
+import Signup from '../components/Signup';
 
 
-const Signinpages = () => {
+const Signuppages = () => {
 
     const [isOpen, setIsOpen] = useState(false)
 
@@ -16,9 +16,9 @@ const Signinpages = () => {
         <>
             <Sidebar isOpen = {isOpen} toggle={toggle}/>
             <Navbar toggle = {toggle}/> 
-            <SignIn />
+            <Signup />
         </>
     )
 }
 
-export default Signinpages
+export default Signuppages

@@ -46,7 +46,8 @@ export const FormContent = styled.div`
 export const Form = styled.form`
   background-color: #010101;
   max-width: 400px;
-  margin-left: -140px;
+  margin-top: 94px;
+  margin-left: -100px;
   height: auto;
   width: 1000%;
   z-index: 1;

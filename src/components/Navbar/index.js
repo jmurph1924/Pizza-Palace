@@ -41,8 +41,8 @@ const Navbar = ({toggle}) => {
                   onMouseEnter={onMouseEnter}
                   onMouseLeave={onMouseLeave}
                   >
-                    <NavLinks to="buildpizza"
-                    smooth={true} duration={500} spy={true} exact='true' offest={-80}
+                    <NavLinks to='/'
+                    onClick={toggleHome}
                     >Build a Pizza</NavLinks>
                     {dropdown && <Dropdown />}
                   </NavItem>
