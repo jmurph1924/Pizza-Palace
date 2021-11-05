@@ -24,8 +24,6 @@ const SignUp = () => {
                 <FormInput htmlFor='state' required />
                 <FormLabel htmlFor='for'>Zip-Code</FormLabel>
                 <FormInput htmlFor='zipcode' required />
-              <FormLabel htmlFor='for'>Password</FormLabel>
-                <FormInput htmlFor='password' required />
               <FormButton type='submit'>Sign Up</FormButton>
             </Form>
             </FormContent>

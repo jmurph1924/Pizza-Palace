@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import {Link as LinkR} from 'react-router-dom';
 
-export const CheckoutContainer = styled.div`
+export const SigninContainer = styled.div`
   color: white;
   background: ${({lightBg}) => (lightBg ? '#f9f9f9' : 'white')};
 
@@ -9,7 +9,7 @@ export const CheckoutContainer = styled.div`
     padding: 100px 0;
   }
 `
-export const CheckoutWrapper = styled.div`
+export const SigninWrapper = styled.div`
   display: grid;
   z-index: 1;
   height: 800px;
@@ -21,7 +21,7 @@ export const CheckoutWrapper = styled.div`
   justify-content: center;
 `
 
-export const CheckoutFormWrap = styled.div`
+export const FormWrap = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -32,7 +32,7 @@ export const CheckoutFormWrap = styled.div`
   }
 `
 
-export const CheckoutFormContent = styled.div`
+export const FormContent = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -67,6 +67,15 @@ export const FormH1 = styled.h1`
   font-weight: 400;
   text-align: center;
 `
+export const FormH2 = styled.h1`
+  margin-bottom: 30px;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 400;
+  text-align: left;
+  text-decoration: underline;
+`
+
 export const FormLabel = styled.label`
   margin-bottom: 8px;
   font-size: 14px;
@@ -77,6 +86,22 @@ export const FormInput = styled.input`
   margin-bottom: 32px;
   border-radius: 4px;
 `
+export const FormLabel2 = styled.div`
+  display: inline flex;
+  justify-content: flex-start;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #fff;
+`
+export const FormInput2 = styled.input`
+  display: grid;
+  justify-content: flex-start;
+  padding: 16px 16px;
+  width: 80px;
+  margin-bottom: 32px;
+  border-radius: 4px;
+`
+
 export const FormButton = styled.button`
   background: #C01717;
   padding: 16px 0;
@@ -108,3 +133,21 @@ color: #fff;
 font-size: 14px;
 `
 
+export const NavItem = styled.li`
+    height: 80px;
+`;
+
+export const NavLinks = styled(LinkR)`
+    color: white;
+    display: grid;
+    align-items: center;
+    margin-left: -110px;
+    text-decoration: none;
+    padding: 0 1rem;
+    font-size: 20px;
+    height: 100%;
+    cursor: pointer;
+    &.active{
+        color: white;
+    }
+`;
