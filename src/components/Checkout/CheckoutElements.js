@@ -69,11 +69,20 @@ export const FormH1 = styled.h1`
 `
 export const FormH2 = styled.h1`
   margin-bottom: 30px;
+  margin-top: 30px;
   color: #fff;
   font-size: 20px;
   font-weight: 400;
   text-align: left;
   text-decoration: underline;
+`
+export const FormH3 = styled.h1`
+  margin-bottom: 40px;
+  margin-top: 30px;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 400;
+  text-align: center;
 `
 
 export const FormLabel = styled.label`
@@ -151,3 +160,4 @@ export const NavLinks = styled(LinkR)`
         color: white;
     }
 `;
+

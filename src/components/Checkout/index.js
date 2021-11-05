@@ -1,5 +1,5 @@
 import React from 'react'
-import { SigninContainer, SigninWrapper, FormWrap, FormContent, Form, FormH1, FormLabel, FormInput, FormButton, FormH2, FormInput2, FormLabel2,FormLabel3,FormInput3} from './CheckoutElements'
+import { SigninContainer, SigninWrapper, FormWrap, FormContent, Form, FormH1, FormLabel, FormInput, FormButton, FormH2, FormInput2, FormLabel2, FormH3, FormButton2} from './CheckoutElements'
 
 const Checkout = () => {
   return (
@@ -31,7 +31,12 @@ const Checkout = () => {
                 <FormInput2 htmlFor='date' required />
               <FormLabel2 htmlFor='for'>CVC</FormLabel2>
                 <FormInput2 htmlFor='cvc' required/>
+              <FormH3> Review Order</FormH3>
+                <FormLabel htmlFor='for'>Total:</FormLabel>
+
               <FormButton type='submit'>Checkout</FormButton>
+              <FormButton2 to='signin'> Login</FormButton2>
+              
             </Form>
             </FormContent>
           </FormWrap>
