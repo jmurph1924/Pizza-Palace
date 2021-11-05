@@ -1,23 +1,34 @@
 import React from 'react';
 import { DropdownContainer, DropdownLinker, DropdownWrapper} from './DropdownElements';
 
+
 const Dropdown = ({isOpen, toggle}) => {
     return (
         <DropdownContainer isOpen={isOpen} onClick={toggle}>
             <DropdownWrapper>
-                    <DropdownLinker to='sizes' onClick={toggle}>
+                    <DropdownLinker to='sizes' 
+                        smooth={true} duration={500} spy={true} exact='true' offest={-80}
+                        onClick={toggle}>
                         Size
                     </DropdownLinker>
-                    <DropdownLinker to='crust' onClick={toggle}>
+                    <DropdownLinker to='crust' 
+                        smooth={true} duration={500} spy={true} exact='true' offest={-80}
+                        onClick={toggle}>
                         Crust
                     </DropdownLinker>
-                    <DropdownLinker to='sauce' onClick={toggle}>
+                    <DropdownLinker to='sauce' 
+                        smooth={true} duration={500} spy={true} exact='true' offest={-80}
+                        onClick={toggle}>
                         Sauce
                     </DropdownLinker>
-                    <DropdownLinker to='toppings' onClick={toggle}>
+                    <DropdownLinker to='toppings' 
+                        smooth={true} duration={500} spy={true} exact='true' offest={-80}
+                        onClick={toggle}>
                         Toppings
                     </DropdownLinker>
-                    <DropdownLinker to='beverages' onClick={toggle}>
+                    <DropdownLinker to='beverages' 
+                        smooth={true} duration={500} spy={true} exact='true' offest={-80}
+                        onClick={toggle}>
                         Beverages
                     </DropdownLinker>
             </DropdownWrapper>

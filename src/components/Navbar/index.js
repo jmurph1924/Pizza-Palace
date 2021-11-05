@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import {FaBars} from 'react-icons/fa';
 import {Nav, NavbarContainer, NavLogo, MobileIcon, NavMenu, NavItem, NavLinks, NavBtn, NavBtnLink} from './NavbarElements';
 import Dropdown from './Dropdown';
+import { animateScroll as scroll } from 'react-scroll';
 
 const Navbar = ({toggle}) => {
-
     const [dropdown, setDropdown] = useState(false);
 
 
@@ -24,11 +24,15 @@ const Navbar = ({toggle}) => {
     }
   };
 
+  const toggleHome = () => {
+    scroll.scrollToTop();
+  }
+
     return (
       <>
         <Nav>
             <NavbarContainer>
-                <NavLogo to= "home">Pizza Palace</NavLogo>
+                <NavLogo to= '/' onClick={toggleHome}>Pizza Palace</NavLogo>
                 <MobileIcon onClick={toggle}>
                   <FaBars />
                 </MobileIcon>
@@ -37,7 +41,9 @@ const Navbar = ({toggle}) => {
                   onMouseEnter={onMouseEnter}
                   onMouseLeave={onMouseLeave}
                   >
-                    <NavLinks to="buildpizza">Build a Pizza</NavLinks>
+                    <NavLinks to="buildpizza"
+                    smooth={true} duration={500} spy={true} exact='true' offest={-80}
+                    >Build a Pizza</NavLinks>
                     {dropdown && <Dropdown />}
                   </NavItem>
                 </NavMenu>

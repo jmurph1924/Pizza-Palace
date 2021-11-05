@@ -30,7 +30,10 @@ export const DropdownLinker = styled(LinkS)`
     cursor: pointer;
 
     &:hover{
-        color: #E80000;
+        color: #C01717;
         transition: 0ms.2 ease-in-out;
+    }
+    &.active{
+        color: #C01717;
     }
 `
