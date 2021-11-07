@@ -34,7 +34,7 @@ const Checkout = () => {
               <FormH3> Review Order</FormH3>
                 <FormLabel htmlFor='for'>Total:</FormLabel>
 
-              <FormButton type='submit'>Checkout</FormButton>
+              <FormButton2 to='checkout3'>Checkout</FormButton2>
               <FormButton2 to='signin'> Login</FormButton2>
               
             </Form>
