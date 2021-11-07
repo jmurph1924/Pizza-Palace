@@ -5,6 +5,7 @@ import Home from '../src/pages/Home'
 import Signinpages from './pages/Signinpage';
 import Signuppages from './pages/Signuppage';
 import Checkoutpage from './pages/Checkoutpage';
+import Checkoutpage2 from './pages/Checkoutpage2';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path='/signin' component={Signinpages} exact />
         <Route path='/signup' component={Signuppages} exact />
         <Route path='/checkout' component={Checkoutpage} exact />
+        <Route path='/checkout2' component={Checkoutpage2} exact />
       </Switch>
     </Router>
   );
