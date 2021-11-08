@@ -29,6 +29,7 @@ const Checkout3 = () => {
               <FormLabel htmlFor='for'>Credit Card Number: 123412345678</FormLabel>
               <FormLabel2 htmlFor='for'>Date: 01/22</FormLabel2>
               <FormLabel2 htmlFor='for'>CVC: 123</FormLabel2>
+              <FormH2> Total: $13.75</FormH2>
             </Form>
             </FormContent>
           </FormWrap>

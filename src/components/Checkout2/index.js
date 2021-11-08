@@ -10,6 +10,9 @@ const Checkout2 = () => {
             <FormContent>
             <Form action='#'>
               <FormH1> A Great Pizza is On the Way</FormH1>
+
+              <FormH2> Rewards: 327 Points</FormH2>
+
               <FormH2> Customer Information</FormH2>
               <FormLabel htmlFor='for'>Name</FormLabel>
                 <FormInput htmlFor='name' required />
