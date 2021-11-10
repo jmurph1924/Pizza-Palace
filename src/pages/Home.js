@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
 import Sidebar from '../components/Sidebar';
 import Navbar from '../components/Navbar';
-import { homeObjOne } from '../components/InfoSection/Data';
+import { homeObjOne } from '../components/Sizes/Data';
 import HeroSection from '../components/HeroSection';
-import InfoSection from '../components/InfoSection';
+import InfoSection from '../components/Sizes';
 import CrustSection from '../components/Crust';
 import { crustObjOne } from '../components/Crust/Data';
 import SauceSection from '../components/Sauce';
