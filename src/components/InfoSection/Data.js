@@ -5,6 +5,7 @@ export const homeObjOne = {
     lighttextDesc: false,
     headline: 'Size',
     description: 'Get access to our exclusive app that allows you to send unlimited transactions whitout getting charged any fees.',
+    buttonLabel4: 'Extra Large',
     buttonLabel1: 'Large',
     buttonLabel2: 'Medium',
     buttonLabel3: 'Small',

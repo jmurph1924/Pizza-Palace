@@ -1,7 +1,8 @@
-import React from 'react'
-import { SigninContainer, SigninWrapper, FormWrap, FormContent, Form, FormH1, FormLabel, FormInput, FormButton, FormH2, FormInput2, FormLabel2, FormH3, FormButton2} from './CheckoutElements2'
+import React from 'react'; 
+import { SigninContainer, SigninWrapper, FormWrap, FormContent, Form, FormH1, FormLabel, FormInput, FormButton, FormH2, FormInput2, FormLabel2, FormH3, FormButton2} from './CheckoutElements2';
 
 const Checkout = () => {
+
   return (
     <>
       <SigninContainer>
@@ -44,6 +45,6 @@ const Checkout = () => {
       </SigninContainer>
     </>
   )
-}
+};
 
 export default Checkout
