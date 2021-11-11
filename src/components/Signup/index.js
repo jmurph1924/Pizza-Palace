@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Axios from 'axios';
-import { SigninContainer, SigninWrapper, FormWrap, FormContent, Form, FormH1, FormLabel, FormInput, FormButton} from './SignupElements'
+import { SigninContainer, SigninWrapper, FormWrap, FormContent, Form, FormH1, FormLabel, FormInput, FormButton2} from './SignupElements'
 
 const SignUp = () => {
 
@@ -60,7 +60,7 @@ ADDRESS: address, CITY: city, STATE: state, COUNTRY: country, ZIPCODE: zipcode})
                 <FormInput htmlFor='zipcode' required onChange={(e) =>{
                   setZipcode(e.target.value)
                 }}/>
-              <FormButton type='submit' onClick={submitReview}>Sign Up</FormButton>
+              <FormButton2 to="/signin" onClick={submitReview}>Sign Up</FormButton2>
             </Form>
             </FormContent>
           </FormWrap>

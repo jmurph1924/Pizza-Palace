@@ -36,6 +36,31 @@ const ZIPCODE = req.body.ZIPCODE;
     });
 });
 
+app.post('/login', (req, res) => {
+
+const phone_num = req.body.phone_num;
+const c_password = req.body.c_password;
+
+
+    const sqlInsert = "SELECT * FROM customer WHERE phone_num = ? AND c_password = ?";
+
+    db.query(sqlInsert, [phone_num, c_password], (err, result) => {
+
+        if(err)
+        {
+            res.send({err: err})
+        }
+
+        if (result.length > 0){
+            res.send(result)
+        }
+        else{
+            res.send({message: "Wrong username/password"})
+        }
+
+    });
+})
+
 app.listen(3001, () => {
     console.log('running on port 3001');
 });

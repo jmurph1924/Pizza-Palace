@@ -1,5 +1,6 @@
 import React from 'react'
-import { SigninContainer, SigninWrapper, FormWrap, FormContent, Form, FormH1, FormLabel, FormInput, FormButton, FormH2, FormInput2, FormLabel2, FormH3, FormButton2} from './CheckoutElements2'
+import { SigninContainer, SigninWrapper, FormWrap, FormContent, Form, FormH1, FormLabel, FormInput, 
+  FormButton, FormH2, FormInput2, FormLabel2} from './CheckoutElements2'
 
 const Checkout2 = () => {
   return (
@@ -11,7 +12,7 @@ const Checkout2 = () => {
             <Form action='#'>
               <FormH1> A Great Pizza is On the Way</FormH1>
 
-              <FormH2> Rewards: 327 Points</FormH2>
+
 
               <FormH2> Customer Information</FormH2>
               <FormLabel htmlFor='for'>Name</FormLabel>
