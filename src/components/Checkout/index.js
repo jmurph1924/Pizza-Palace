@@ -1,7 +1,22 @@
-import React from 'react'; 
-import { SigninContainer, SigninWrapper, FormWrap, FormContent, Form, FormH1, FormLabel, FormInput, FormH2, FormInput2, FormLabel2, FormH3, FormButton2} from './CheckoutElements2';
+import React, { useState } from 'react';
+import { SigninContainer, SigninWrapper, FormWrap, FormContent, Form, FormH1, FormLabel, FormInput, FormH2, FormButton2} from './CheckoutElements2';
+import { Button } from '../ButtonElements5';
+import Dropdown from './Dropdown';
 
 const Checkout = () => {
+
+  const [dropdown, setDropdown] = useState(false);
+
+  const toggleHome = () => {
+    if (dropdown === true) {
+      setDropdown(false);
+     } else {
+       setDropdown(true);
+     }
+  }
+  const toggleOff = () => {
+    setDropdown(false)
+  }
 
   return (
     <>
@@ -25,16 +40,11 @@ const Checkout = () => {
                 <FormInput htmlFor='state' required />
               <FormLabel htmlFor='for'>Zip-Code</FormLabel>
                 <FormInput htmlFor='zipcode' required />
-              <FormH2> Credit Cards</FormH2>
-              <FormLabel htmlFor='for'>Credit Card Number</FormLabel>
-                <FormInput htmlFor='creditcardnum' required />
-              <FormLabel2 htmlFor='for'>Date</FormLabel2>
-                <FormInput2 htmlFor='date' required />
-              <FormLabel2 htmlFor='for'>CVC</FormLabel2>
-                <FormInput2 htmlFor='cvc' required/>
-              <FormH3> Review Order</FormH3>
                 <FormLabel htmlFor='for'>Total:</FormLabel>
-
+              <Button onClick={toggleHome}>Credit Card</Button>
+              {dropdown && <Dropdown />}
+              <Button onClick={toggleOff}> Check</Button>
+              <Button onClick={toggleOff}> Cash</Button>
               <FormButton2 to='checkout3'>Checkout</FormButton2>
               <FormButton2 to='signin'> Login</FormButton2>
               

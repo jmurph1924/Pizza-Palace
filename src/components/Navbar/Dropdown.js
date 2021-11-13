@@ -31,6 +31,11 @@ const Dropdown = ({isOpen, toggle}) => {
                         onClick={toggle}>
                         Beverages
                     </DropdownLinker>
+                    <DropdownLinker to='adding' 
+                        smooth={true} duration={500} spy={true} exact='true' offest={-80}
+                        onClick={toggle}>
+                        Add to Cart
+                    </DropdownLinker>
             </DropdownWrapper>
         </DropdownContainer>
     )

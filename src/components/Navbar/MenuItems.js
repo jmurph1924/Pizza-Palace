@@ -23,5 +23,10 @@ export const MenuItems = [
         title: 'Beverages',
         path: '/beverages',
         cName: 'dropdown-link'
-    }
+    },
+    {
+      title: 'Add to Cart',
+      path: '/adding',
+      cName: 'dropdown-link'
+    },
   ];

@@ -12,6 +12,8 @@ import ToppingsSection from '../components/Toppings';
 import { toppingsObjOne } from '../components/Toppings/Data';
 import BeveragesSection from '../components/Beverages';
 import { beveragesObjOne } from '../components/Beverages/Data';
+import Checkoutbutton from '../components/Checkoutbutton';
+import { checkoutbutton1 } from '../components/Checkoutbutton/Data';
 
 
 const Home = () => {
@@ -31,6 +33,7 @@ const Home = () => {
           <SauceSection {...sauceObjOne}/>
           <ToppingsSection {...toppingsObjOne}/>
           <BeveragesSection {...beveragesObjOne} />
+          <Checkoutbutton {...checkoutbutton1} />
         </>
     )
 }
