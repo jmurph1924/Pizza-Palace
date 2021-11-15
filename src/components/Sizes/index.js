@@ -1,6 +1,21 @@
-import React from 'react'
+import React, { useState } from "react";
 import { Button } from '../ButtonElements2'
 import { InfoContainer, InfoWrapper, InfoRow, Column1, Column2, TextWrapper, Heading, Subtitle, BtnWrap, ImgWrap, Img } from './InfoElements';
+
+const types = ["Extra Large", "Large", "Medium", "Small"];
+
+function ToggleGroup() {
+  const [active, setActive] = useState();
+  return (
+    <BtnWrap>
+      {types.map((type) => (
+        <Button active={active === type} onClick={() => setActive(type)}>
+          {type}
+        </Button>
+      ))}
+    </BtnWrap>
+  );
+}
 
 const InfoSection = ({lightBg, id, imgStart, lightText, headline, darkText, description, buttonLabel1, buttonLabel2, buttonLabel3, buttonLabel4, alt, img, primary, dark, dark2, toggle }) => {
   return (
@@ -12,59 +27,7 @@ const InfoSection = ({lightBg, id, imgStart, lightText, headline, darkText, desc
               <TextWrapper>
                 <Heading lightText={lightText}>{headline}</Heading>
                 <Subtitle darkText={darkText}>{description}</Subtitle>
-                <BtnWrap>
-                  <Button to='home'
-                  smooth={true}
-                  duration={500}
-                  spy={true}
-                  exact='true'
-                  offset={-80}
-                  primary={primary ? 1 : 0}
-                  dark={dark ? 1 : 0}
-                  dark2={dark2 ? 1 : 0}
-                  >{buttonLabel4}
-                  </Button>
-                </BtnWrap>
-                <BtnWrap>
-                  <Button to='home'
-                  smooth={true}
-                  duration={500}
-                  spy={true}
-                  exact='true'
-                  offset={-80}
-                  primary={primary ? 1 : 0}
-                  dark={dark ? 1 : 0}
-                  dark2={dark2 ? 1 : 0}
-                  >{buttonLabel1}
-                  </Button>
-                </BtnWrap>
-                <BtnWrap>
-                  <Button to='home'
-                  smooth={true}
-                  duration={500}
-                  spy={true}
-                  exact='true'
-                  offset={-80}
-                  primary={primary ? 1 : 0}
-                  dark={dark ? 1 : 0}
-                  dark2={dark2 ? 1 : 0}
-                  >{buttonLabel2}
-                  </Button>
-                </BtnWrap>
-                <BtnWrap>
-                  <Button to='home'
-                  smooth={true}
-                  duration={500}
-                  spy={true}
-                  exact='true'
-                  offset={-80}
-                  primary={primary ? 1 : 0}
-                  dark={dark ? 1 : 0}
-                  dark2={dark2 ? 1 : 0}
-                  >{buttonLabel3}
-                  </Button>
-                </BtnWrap>
-                
+                <ToggleGroup />
               </TextWrapper>
             </Column1>
             <Column2>

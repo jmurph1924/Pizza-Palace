@@ -119,6 +119,7 @@ export const FormButton = styled.button`
   color: #fff;
   font-size: 20px;
   cursor: pointer;
+  margin-top: 20px;
 `
 
 export const FormButton2 = styled(LinkR)`

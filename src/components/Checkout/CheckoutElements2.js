@@ -132,7 +132,13 @@ export const FormButton2 = styled(LinkR)`
   color: #fff;
   font-size: 20px;
   cursor: pointer;
-    margin-top: 20px;
+  margin-top: 20px;
+
+  &:hover {
+        transition: all 0.2s ease-in-out;
+        background: ${({primary}) => (primary ? '#C01717' : '#252525')
+    };
+    }
 `
 
 export const Text = styled.span`
@@ -156,8 +162,13 @@ export const NavLinks = styled(LinkR)`
     font-size: 20px;
     height: 100%;
     cursor: pointer;
+    &:hover {
+        transition: all 0.2s ease-in-out;
+        background: '#C01717';
+        color: white;
+    }
+
     &.active{
         color: white;
     }
 `;
-

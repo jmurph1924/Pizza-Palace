@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
 import Sidebar from '../components/Sidebar';
 import Navbar from '../components/Navbar';
-import Checkout3 from '../components/Checkout3';
+import Loggedin from '../components/Loggedin';
 
 
 
-const Checkoutpage3 = () => {
+const Loggedinpage = () => {
     const [isOpen, setIsOpen] = useState(false)
 
     const toggle = () => {
@@ -16,9 +16,9 @@ const Checkoutpage3 = () => {
         <>
           <Sidebar isOpen = {isOpen} toggle={toggle}/>
           <Navbar toggle = {toggle}/>  
-          <Checkout3 />
+          <Loggedin />
         </>
     )
 }
 
-export default Checkoutpage3
+export default Loggedinpage

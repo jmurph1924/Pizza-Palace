@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button } from '../ButtonElements'
+import { Button } from '../ButtonElements2'
 import { InfoContainer, InfoWrapper, InfoRow, Column1, Column2, TextWrapper, Heading, BtnWrap, ImgWrap, Img } from './BeveragesElements';
 
 const BeveragesSection = ({lightBg, id, imgStart, topLine, lightText, headline, darkText,

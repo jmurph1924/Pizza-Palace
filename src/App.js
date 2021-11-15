@@ -5,8 +5,8 @@ import Home from '../src/pages/Home'
 import Signinpages from './pages/Signinpage';
 import Signuppages from './pages/Signuppage';
 import Checkoutpage from './pages/Checkoutpage';
-import Checkoutpage2 from './pages/Checkoutpage2';
-import Checkoutpage3 from './pages/Checkoutpage3';
+import Loggedinpage from './pages/Loggedinpage';
+import Receiptpage from './pages/Receiptpage';
 
 function App() {
   return (
@@ -16,8 +16,8 @@ function App() {
         <Route path='/signin' component={Signinpages} exact />
         <Route path='/signup' component={Signuppages} exact />
         <Route path='/checkout' component={Checkoutpage} exact />
-        <Route path='/checkout2' component={Checkoutpage2} exact />
-        <Route path='/checkout3' component={Checkoutpage3} exact />
+        <Route path='/loggedin' component={Loggedinpage} exact />
+        <Route path='/receipt' component={Receiptpage} exact />
       </Switch>
     </Router>
   );

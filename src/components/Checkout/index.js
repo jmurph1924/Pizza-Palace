@@ -1,22 +1,70 @@
 import React, { useState } from 'react';
-import { SigninContainer, SigninWrapper, FormWrap, FormContent, Form, FormH1, FormLabel, FormInput, FormH2, FormButton2} from './CheckoutElements2';
+import { SigninContainer, SigninWrapper, FormWrap, FormContent, Form, FormH1, FormLabel, FormInput, FormH2, FormH3, FormButton2} from './CheckoutElements2';
 import { Button } from '../ButtonElements5';
 import Dropdown from './Dropdown';
 
-const Checkout = () => {
+
+
+const types = ["Credit Card", "Check", "Cash"];
+
+function ToggleGroup() {
+  const [active, setActive] = useState();
 
   const [dropdown, setDropdown] = useState(false);
 
-  const toggleHome = () => {
-    if (dropdown === true) {
-      setDropdown(false);
-     } else {
-       setDropdown(true);
-     }
+  function checkToggle(type){
+    if(type === "Credit Card"){
+      if (dropdown === true) {
+        setActive()
+        setDropdown(false);
+        
+       } else {
+         setDropdown(true);
+       }
+    }
+    else{
+      setDropdown(false)
+    }
   }
-  const toggleOff = () => {
-    setDropdown(false)
+
+  function callBoth(type){
+    setActive(type)
+    checkToggle(type)
   }
+
+  return (
+    <>
+      {types.map((type) => (
+        <Button active={active === type} onClick={() => {callBoth(type)}}>
+          {type}
+        </Button>  
+      ))}
+      {dropdown && <Dropdown />}
+    </>
+  );
+}
+
+const typeing = ["Pick-Up", "Delivery"];
+
+function ToggleType() {
+  const [active, setActive] = useState();
+
+  return (
+    <>
+      {typeing.map((type) => (
+        <Button active={active === type} onClick={() => {setActive(type)}}>
+          {type}
+        </Button>  
+      ))}
+    </>
+  );
+}
+
+
+
+const Checkout = () => {
+
+
 
   return (
     <>
@@ -26,7 +74,17 @@ const Checkout = () => {
             <FormContent>
             <Form action='#'>
               <FormH1> A Great Pizza is On the Way</FormH1>
-              <FormButton2 to='signin'> Login</FormButton2>
+              <FormH2> Order# 001</FormH2>
+              <FormH2> Pizzas</FormH2>
+              <FormLabel htmlFor='for'>Pizza 1: Large</FormLabel> 
+              <FormLabel htmlFor='for'>Crust: Gluten-Free</FormLabel>
+              <FormLabel htmlFor='for'>Sauce: BBQ</FormLabel>
+              <FormLabel htmlFor='for'>Toppings: Diced Tomatos, Sausage</FormLabel>
+              <FormH3></FormH3>
+              <FormLabel htmlFor='for'>Pizza 2: Medium</FormLabel> 
+              <FormLabel htmlFor='for'>Crust: Regular</FormLabel>
+              <FormLabel htmlFor='for'>Sauce: Marinara</FormLabel>
+              <FormLabel htmlFor='for'>Toppings: Bacon</FormLabel>
               <FormH2> Customer Information</FormH2>
               <FormLabel htmlFor='for'>Name</FormLabel>
                 <FormInput htmlFor='name' required />
@@ -41,11 +99,10 @@ const Checkout = () => {
               <FormLabel htmlFor='for'>Zip-Code</FormLabel>
                 <FormInput htmlFor='zipcode' required />
                 <FormLabel htmlFor='for'>Total:</FormLabel>
-              <Button onClick={toggleHome}>Credit Card</Button>
-              {dropdown && <Dropdown />}
-              <Button onClick={toggleOff}> Check</Button>
-              <Button onClick={toggleOff}> Cash</Button>
-              <FormButton2 to='checkout3'>Checkout</FormButton2>
+              <ToggleGroup />
+              <FormH3></FormH3>
+              <ToggleType />
+              <FormButton2 to='receipt'>Checkout</FormButton2>
               <FormButton2 to='signin'> Login</FormButton2>
               
             </Form>

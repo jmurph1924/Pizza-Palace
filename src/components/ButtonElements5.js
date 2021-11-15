@@ -1,20 +1,23 @@
 import styled from 'styled-components'
 
-
 export const Button = styled.button`
-    background: #C01717;
-  display: grid;
-  grid-auto-columns: minmax(auto, 1fr);
-  width: 100px;
-  text-decoration: none;
-  justify-content: center;
-  padding: 16px 0;
-  border: none;
-  border-radius: 4px;
-  color: #fff;
-  font-size: 16px;
-  cursor: pointer;
-    margin-top: 20px;
+    border-radius: 50px;
+    background: ${({primary}) => (primary ? '#C01717' : '#252525')
+    };
+    white-space: nowrap;
+    padding: ${({big}) => (big ? '14px 48px' : '12px 30px')};
+    color: ${({dark}) => (dark ? '#010606' : '#fff')};
+    font-size: ${({fontBig}) => (fontBig ? '20px' : '16px')};
+    outline: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease-in-out;
+    text-decoration: none;
+    margin-bottom: 5px;
+    overflow: hidden;
 
     &:hover {
         transition: all 0.2s ease-in-out;
@@ -22,7 +25,10 @@ export const Button = styled.button`
         };
     }
 
-    &.active{
-        color: black;
-    }
+    ${({ active }) =>
+    active &&
+    `
+        background: #C01717;
+        color: white;
+    `}
 `

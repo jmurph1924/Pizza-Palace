@@ -4,7 +4,7 @@ import {Link as LinkS} from 'react-scroll';
 export const DropdownContainer = styled.aside`
     background: rgba(0,0,0);
     margin-left: 400px;
-    margin-top: 750px;
+    margin-top: 30px;
     width: 350px;
     position: absolute;
     top: 80px;

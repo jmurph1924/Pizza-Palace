@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 
-
 export const Button = styled.button`
     border-radius: 50px;
     background: ${({primary}) => (primary ? '#C01717' : '#252525')
@@ -13,10 +12,11 @@ export const Button = styled.button`
     border: none;
     cursor: pointer;
     display: flex;
-    justify-content: center;
+    justify-content: inline-flex;
     align-items: center;
     transition: all 0.2s ease-in-out;
     text-decoration: none;
+    margin-right: 10px;
 
     &:hover {
         transition: all 0.2s ease-in-out;
@@ -24,7 +24,10 @@ export const Button = styled.button`
         };
     }
 
-    &.active{
-        color: #C01717;
-    }
+    ${({ active }) =>
+    active &&
+    `
+        background: #C01717;
+        color: white;
+    `}
 `

@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
 import Sidebar from '../components/Sidebar';
 import Navbar from '../components/Navbar';
-import Checkout2 from '../components/Checkout2';
+import Receipt from '../components/Receipt';
 
 
 
-const Checkoutpage2 = () => {
+const Receiptpage = () => {
     const [isOpen, setIsOpen] = useState(false)
 
     const toggle = () => {
@@ -16,9 +16,9 @@ const Checkoutpage2 = () => {
         <>
           <Sidebar isOpen = {isOpen} toggle={toggle}/>
           <Navbar toggle = {toggle}/>  
-          <Checkout2 />
+          <Receipt />
         </>
     )
 }
 
-export default Checkoutpage2
+export default Receiptpage

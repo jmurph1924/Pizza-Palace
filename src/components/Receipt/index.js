@@ -1,7 +1,7 @@
 import React from 'react'
-import { SigninContainer, SigninWrapper, FormWrap, FormContent, Form, FormH1, FormLabel, FormH2, FormLabel2, FormH3} from './CheckoutElements3'
+import { SigninContainer, SigninWrapper, FormWrap, FormContent, Form, FormH1, FormLabel, FormH2, FormLabel2, FormH3} from './ReceiptElements'
 
-const Checkout3 = () => {
+const Receipt = () => {
   return (
     <>
       <SigninContainer>
@@ -10,6 +10,7 @@ const Checkout3 = () => {
             <FormContent>
             <Form action='#'>
               <FormH1> Receipt</FormH1>
+              <FormH2> Order# 001</FormH2>
               <FormH2> Pizza</FormH2>
               <FormLabel htmlFor='for'>Pizza 1: Large</FormLabel> 
               <FormLabel htmlFor='for'>Crust: Gluten-Free</FormLabel>
@@ -20,7 +21,8 @@ const Checkout3 = () => {
               <FormLabel htmlFor='for'>Crust: Regular</FormLabel>
               <FormLabel htmlFor='for'>Sauce: Marinara</FormLabel>
               <FormLabel htmlFor='for'>Toppings: Bacon</FormLabel>
-
+              <FormH3></FormH3>
+              <FormH1>Delivery Information</FormH1>
               <FormH2> Customer Information</FormH2>
               <FormLabel htmlFor='for'>Name: Todd Jones</FormLabel> 
               <FormLabel htmlFor='for'>Phone Number: 678-867-5309</FormLabel>
@@ -30,6 +32,7 @@ const Checkout3 = () => {
               <FormLabel2 htmlFor='for'>Date: 01/22</FormLabel2>
               <FormLabel2 htmlFor='for'>CVC: 123</FormLabel2>
               <FormH2> Total: $13.75</FormH2>
+              
             </Form>
             </FormContent>
           </FormWrap>
@@ -39,4 +42,4 @@ const Checkout3 = () => {
   )
 }
 
-export default Checkout3
+export default Receipt
