@@ -1,10 +1,10 @@
 import React from 'react'
 import { Button } from '../ButtonElements2'
-import { InfoContainer, InfoWrapper, InfoRow, Column1, Column2, TextWrapper, Heading, BtnWrap, ImgWrap, Img } from './BeveragesElements';
+import { InfoContainer, InfoWrapper, InfoRow, Column1, Column2, TextWrapper, Heading, BtnWrap, ImgWrap, Img, Subtitle } from './BeveragesElements';
 
 const BeveragesSection = ({lightBg, id, imgStart, topLine, lightText, headline, darkText,
    buttonLabel1, buttonLabel2, buttonLabel3, buttonLabel4, buttonLabel5, buttonLabel6, buttonLabel7,
-  alt, img, primary, dark, dark2 }) => {
+  alt, img, primary, dark, dark2, description }) => {
   return (
     <>
       <InfoContainer lightBg={lightBg} id={id}>
@@ -13,6 +13,7 @@ const BeveragesSection = ({lightBg, id, imgStart, topLine, lightText, headline, 
             <Column1>
               <TextWrapper>
                 <Heading lightText={lightText}>{headline}</Heading>
+                <Subtitle darkText={darkText}>{description}</Subtitle>
                 <BtnWrap>
                   <Button to='home'
                   smooth={true}

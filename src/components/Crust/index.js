@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Button } from '../ButtonElements2'
-import { InfoContainer, InfoWrapper, InfoRow, Column1, Column2, TextWrapper, Heading, BtnWrap, ImgWrap, Img } from './CrustElements';
+import { InfoContainer, InfoWrapper, InfoRow, Column1, Column2, TextWrapper, Heading, BtnWrap, ImgWrap, Img, Subtitle} from './CrustElements';
 
 const types = ["Regular", "Stuffed", "Gluten-Free", "Asiago"];
 
@@ -17,7 +17,7 @@ function ToggleGroup() {
   );
 }
 
-const CrustSection = ({lightBg, id, imgStart, lightText, headline, buttonLabel1, buttonLabel2, buttonLabel3, buttonLabel4, alt, img, primary, dark, dark2 }) => {
+const CrustSection = ({lightBg, id, imgStart, lightText, headline, alt, img, darkText, description}) => {
   return (
     <>
       <InfoContainer lightBg={lightBg} id={id}>
@@ -26,6 +26,7 @@ const CrustSection = ({lightBg, id, imgStart, lightText, headline, buttonLabel1,
             <Column1>
               <TextWrapper>
                 <Heading lightText={lightText}>{headline}</Heading>
+                <Subtitle darkText={darkText}>{description}</Subtitle>
                 <ToggleGroup />
               </TextWrapper>
             </Column1>

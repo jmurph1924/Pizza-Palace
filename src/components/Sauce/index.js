@@ -1,8 +1,8 @@
 import React, {useState} from 'react'
 import { Button } from '../ButtonElements2'
-import { InfoContainer, InfoWrapper, InfoRow, Column1, Column2, TextWrapper, Heading, BtnWrap, ImgWrap, Img } from './SauceElements';
+import { InfoContainer, InfoWrapper, InfoRow, Column1, Column2, TextWrapper, Heading, BtnWrap, ImgWrap, Img, Subtitle } from './SauceElements';
 
-const types = ["Marinara", "Alfredo", "BBQ"];
+const types = ["Marinara", "Alfredo", "Barbeque"];
 
 function ToggleGroup() {
   const [active, setActive] = useState();
@@ -17,7 +17,7 @@ function ToggleGroup() {
   );
 }
 
-const SauceSection = ({lightBg, id, imgStart, lightText, headline, alt, img}) => {
+const SauceSection = ({lightBg, id, imgStart, lightText, headline, alt, img, description, darkText}) => {
   return (
     <>
       <InfoContainer lightBg={lightBg} id={id}>
@@ -26,6 +26,7 @@ const SauceSection = ({lightBg, id, imgStart, lightText, headline, alt, img}) =>
             <Column1>
               <TextWrapper>
                 <Heading lightText={lightText}>{headline}</Heading>
+                <Subtitle darkText={darkText}>{description}</Subtitle>
                 <ToggleGroup />
               </TextWrapper>
             </Column1>

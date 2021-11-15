@@ -4,6 +4,7 @@ export const beveragesObjOne = {
     lightText: false,
     lighttextDesc: false,
     headline: 'Beverages',
+    description: 'Soft Drink - $2.50\nTea - $2.00\nWater - $1.50',
     buttonLabel1: 'Coke',
     buttonLabel2: 'Dr Pepper',
     buttonLabel3: 'Seven Up',

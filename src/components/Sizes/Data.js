@@ -4,7 +4,7 @@ export const homeObjOne = {
     lightText: false,
     lighttextDesc: false,
     headline: 'Size',
-    description: 'Get access to our exclusive app that allows you to send unlimited transactions whitout getting charged any fees.',
+    description: 'Extra Large - $13.24\nLarge - $10.52\nMedium - $8.48\nSmall - $5.56',
     buttonLabel4: 'Extra Large',
     buttonLabel1: 'Large',
     buttonLabel2: 'Medium',

@@ -4,6 +4,7 @@ export const toppingsObjOne = {
     lightText: false,
     lighttextDesc: false,
     headline: 'Toppings',
+    description: 'Toppings - $0.50 each',
     buttonLabel1: 'Pepperoni',
     buttonLabel2: 'Sausage',
     buttonLabel3: 'Chicken',

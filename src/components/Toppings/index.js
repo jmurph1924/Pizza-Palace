@@ -1,10 +1,10 @@
 import React from 'react'
 import { Button } from '../ButtonElements2'
-import { InfoContainer, InfoWrapper, InfoRow, Column1, Column2, TextWrapper, Heading, BtnWrap, ImgWrap, Img } from './ToppingsElements';
+import { InfoContainer, InfoWrapper, InfoRow, Column1, Column2, TextWrapper, Heading, BtnWrap, ImgWrap, Img, Subtitle} from './ToppingsElements';
 
 const ToppingsSection = ({lightBg, id, imgStart, lightText, headline, 
    buttonLabel1, buttonLabel2, buttonLabel3, buttonLabel4, buttonLabel5, buttonLabel6, buttonLabel7, buttonLabel8,
-  alt, img, primary, dark, dark2 }) => {
+  alt, img, primary, dark, dark2, darkText, description}) => {
   return (
     <>
       <InfoContainer lightBg={lightBg} id={id}>
@@ -13,6 +13,7 @@ const ToppingsSection = ({lightBg, id, imgStart, lightText, headline,
             <Column1>
               <TextWrapper>
                 <Heading lightText={lightText}>{headline}</Heading>
+                <Subtitle darkText={darkText}>{description}</Subtitle>
                 <BtnWrap>
                   <Button to='home'
                   smooth={true}
