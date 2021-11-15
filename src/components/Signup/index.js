@@ -1,24 +1,33 @@
-import React, { useState } from 'react';
-import Axios from 'axios';
+import React from 'react';
 import { SigninContainer, SigninWrapper, FormWrap, FormContent, Form, FormH1, FormLabel, FormInput, FormButton2} from './SignupElements'
 
 const SignUp = () => {
 
-const [phone_num, setPhone_Num] = useState('')
-const [c_password, setc_password] = useState('')
-const [address, setAddress] = useState('')
-const [city, setCity] = useState('')
-const [state, setState] = useState('')
-const [country, setCountry] = useState('')
-const [zipcode, setZipcode] = useState('')
-const [name, setName] = useState('')
-
-const submitReview = () => {
-Axios.post("http://localhost:3001/api/insert", {customer_name: name, phone_num: phone_num, c_password: c_password, 
-ADDRESS: address, CITY: city, STATE: state, COUNTRY: country, ZIPCODE: zipcode}).then(()=> {
-  alert("succesful insert")
-})
-};
+let customerinfo = [];
+let addressinfo = [];
+        // example {id:1592304983049, title: 'Deadpool', year: 2015}
+const addCustomer = (ev)=>{
+  ev.preventDefault();  //to stop the form submitting
+  let customer = {
+  count: customerinfo.length++,
+  name: document.getElementById('name').value,
+  phone_num: document.getElementById('phone_num').value,
+  password: document.getElementById('password').value,
+  online: false
+  }
+  let address = {
+  count: customerinfo.length++,
+  addresses: document.getElementById('addresses').value,
+  city: document.getElementById('city').value,
+  state: document.getElementById('state').value,
+  country: document.getElementById('country').value,
+  zipcode: document.getElementById('zipcode').value,
+  }
+  customerinfo.push(customer);
+  addressinfo.push(address);
+  document.forms[0].reset(); // to clear the form for the next entries
+  //document.querySelector('form').reset();
+}
 
   return (
     <>
@@ -28,39 +37,24 @@ ADDRESS: address, CITY: city, STATE: state, COUNTRY: country, ZIPCODE: zipcode})
             <FormContent>
             <Form action='#'>
               <FormH1>Sign Up for Great Rewards</FormH1>
-              <FormLabel htmlFor='for'>Phone Number</FormLabel>
-                <FormInput htmlFor='phonenumber' required onChange={(e) =>{
-                  setPhone_Num(e.target.value)
-                }}/>
-              <FormLabel htmlFor='for'>Password</FormLabel>
-                <FormInput htmlFor='password' required onChange={(e) =>{
-                  setc_password(e.target.value)
-                }}/>
+              <FormLabel htmlFor='phone_num'>Phone Number</FormLabel>
+                <FormInput type="text" id="phone_num" placeholder="Phone Number"/>
+              <FormLabel htmlFor='password'>Password</FormLabel>
+                <FormInput type="text" id="password" placeholder="Password"/>
               <FormLabel htmlFor='for'>Name</FormLabel>
-                <FormInput htmlFor='name' required onChange={(e) =>{
-                  setName(e.target.value)
-                }}/>
+                <FormInput type="text" id="name" placeholder="Name"/>
               <FormLabel htmlFor='for'>Address</FormLabel>
-                <FormInput htmlFor='address' required onChange={(e) =>{
-                  setAddress(e.target.value)
-                }}/>
+                <FormInput type="text" id="addresses" placeholder="Address"/>
               <FormLabel htmlFor='for'>City</FormLabel>
-                <FormInput htmlFor='city' required onChange={(e) =>{
-                  setCity(e.target.value)
-                }}/>
+                <FormInput type="text" id="city" placeholder="City"/>
               <FormLabel htmlFor='for'>State</FormLabel>
-                <FormInput htmlFor='state' required onChange={(e) =>{
-                  setState(e.target.value)
-                }}/>
+                <FormInput type="text" id="state" placeholder="State"/>
               <FormLabel htmlFor='for'>Country</FormLabel>
-                <FormInput htmlFor='country' required onChange={(e) =>{
-                  setCountry(e.target.value)
-                }}/>
+                <FormInput type="text" id="country" placeholder="Country"/>
               <FormLabel htmlFor='for'>Zip-Code</FormLabel>
-                <FormInput htmlFor='zipcode' required onChange={(e) =>{
-                  setZipcode(e.target.value)
-                }}/>
-              <FormButton2 to="/signin" onClick={submitReview}>Sign Up</FormButton2>
+                <FormInput type="text" id="zipcode" placeholder="Zip-Code"/>
+              <FormButton2 to="/signin" onClick={addCustomer}>Sign Up</FormButton2>
+              <FormLabel htmlFor='for'>Zip-Code</FormLabel>
             </Form>
             </FormContent>
           </FormWrap>
