@@ -1,16 +1,17 @@
 import React from 'react';
-import { DropdownContainer, DropdownLinker, DropdownWrapper} from './DropdownElements';
+import { DropdownContainer, DropdownLinker, DropdownWrapper, DropdownLinker2, DropdownContainer2} from './DropdownElements';
 
 
 const Dropdown = ({isOpen, toggle}) => {
     return (
+        <DropdownContainer2 isOpen={isOpen} onClick={toggle}>
         <DropdownContainer isOpen={isOpen} onClick={toggle}>
             <DropdownWrapper>
-                    <DropdownLinker to='sizes' 
+                    <DropdownLinker2 to='sizes' 
                         smooth={true} duration={500} spy={true} exact='true' offest={-80}
                         onClick={toggle}>
                         Size
-                    </DropdownLinker>
+                    </DropdownLinker2>
                     <DropdownLinker to='crust' 
                         smooth={true} duration={500} spy={true} exact='true' offest={-80}
                         onClick={toggle}>
@@ -38,6 +39,7 @@ const Dropdown = ({isOpen, toggle}) => {
                     </DropdownLinker>
             </DropdownWrapper>
         </DropdownContainer>
+        </DropdownContainer2>
     )
 }
 

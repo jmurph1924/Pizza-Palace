@@ -8,13 +8,13 @@ const Navbar = ({toggle}) => {
     const [dropdown, setDropdown] = useState(false);
 
 
-     const onMouseEnter = () => {
-      if (window.innerWidth < 960) {
-       setDropdown(false);
-      } else {
-        setDropdown(true);
-      }
-     };
+  const onMouseEnter = () => {
+  if (window.innerWidth < 960) {
+     setDropdown(false);
+  } else {
+      setDropdown(true);
+    }
+    };
 
   const onMouseLeave = () => {
     if (window.innerWidth < 960) {

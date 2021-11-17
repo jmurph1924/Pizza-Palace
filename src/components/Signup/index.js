@@ -54,7 +54,6 @@ const addCustomer = (ev)=>{
               <FormLabel htmlFor='for'>Zip-Code</FormLabel>
                 <FormInput type="text" id="zipcode" placeholder="Zip-Code"/>
               <FormButton2 to="/signin" onClick={addCustomer}>Sign Up</FormButton2>
-              <FormLabel htmlFor='for'>Zip-Code</FormLabel>
             </Form>
             </FormContent>
           </FormWrap>
