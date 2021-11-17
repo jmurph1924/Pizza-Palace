@@ -3,7 +3,7 @@ import {Link as LinkS} from 'react-scroll';
 
 export const DropdownContainer2 = styled.aside`
     background: rgba(0,0,0,0);
-    margin-top: -79.8px;
+    margin-top: -55px;
     margin-left: -140px;
     width: 200px;
     height: 200px;
@@ -15,7 +15,7 @@ export const DropdownContainer2 = styled.aside`
 
 export const DropdownContainer = styled.aside`
     background: rgba(0,0,0,0.80);
-    margin-top: -27px;
+    margin-top: -52px;
     width: 200px;
     position: absolute;
     top: 80px;
