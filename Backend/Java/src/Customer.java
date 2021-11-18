@@ -1,6 +1,8 @@
 package Backend.Java.src;
 
-public class Customer {
+import java.io.Serializable;
+
+public class Customer implements Serializable{
 
     private String Name, password, phone_num, address, city, state, country, zipcode, order_num;
     private int count;
@@ -112,6 +114,14 @@ public class Customer {
 
     public static void setObjcnt(int objcnt) {
         Customer.objcnt = objcnt;
+    }
+
+
+    @Override
+    public String toString() {
+        return "Customer [Name=" + Name + ", address=" + address + ", city=" + city + ", count=" + count + ", country="
+                + country + ", order_num=" + order_num + ", password=" + password + ", phone_num=" + phone_num
+                + ", state=" + state + ", zipcode=" + zipcode + "]";
     }
 
     
