@@ -16,11 +16,7 @@ public class mainsystem {
 
         writerCustomer(watson);
         sherlock = readingCustomer();
-
-
-        for(int i = 0; i < sherlock.size(); i++) {
-            System.out.println(sherlock.get(i).toString());
-        }
+        checkLogin(sherlock, "1231232345", "password");
     }
 
     public static void writerCustomer(ArrayList<Customer> moriarty){
@@ -54,16 +50,25 @@ public class mainsystem {
         return John;
     }
 
-    public static void checkLogin(ArrayList<Customer> moriarty, String passcode, String phonecode)
+    public static void checkLogin(ArrayList<Customer> moriarty, String phonecode, String passcode)
     {
         for(int i = 0; i < moriarty.size(); i++){
-            if(moriarty.get(i).getPassword() == passcode){
-                if(moriarty.get(i).getPhone_num() == phonecode){
+            String fix = moriarty.get(i).getPassword();
+            String fix2 = moriarty.get(i).getPhone_num();
+            if(fix.equals(passcode))
+            {
+                if(fix2.equals(phonecode))
+                {
                     System.out.println("Login Succesful");
-                }else{
+                    break;
+                }
+                else
+                {
                     System.out.println("Invalid Username or Password");
                 }
-            }else{
+            }
+            else
+            {
                 System.out.println("Invalid Username or Password");
             }
         }
