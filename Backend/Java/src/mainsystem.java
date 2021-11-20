@@ -6,15 +6,15 @@ public class mainsystem {
     public static void main(String[] args) throws FileNotFoundException {
 
 
-        ArrayList<Customer> watson = new ArrayList<>();
-        watson.add(new Customer("John Doe", "password", "1231232345", "221b Baker Street",
+        ArrayList<Customer> customers = new ArrayList<>();
+        customers.add(new Customer("John Doe", "password", "1231232345", "221b Baker Street",
                 "Kennesaw", "Georgia", "USA", "30044", "0"));
-        watson.add(new Customer("Tony Stark", "password", "1231232345", "221b Baker Street",
+        customers.add(new Customer("Tony Stark", "password", "1231232345", "221b Baker Street",
                 "Kennesaw", "Georgia", "USA", "30044", "12"));
 
         ArrayList<Customer> sherlock = new ArrayList<>();
 
-        writerCustomer(watson);
+        writerCustomer(customers);
         sherlock = readingCustomer();
         checkLogin(sherlock, "1231232345", "password");
     }
