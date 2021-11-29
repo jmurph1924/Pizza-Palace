@@ -1,22 +1,19 @@
 import React from 'react';
 import { SigninContainer, SigninWrapper, FormWrap, FormContent, Form, FormH1, FormLabel, FormInput, FormButton2} from './SignupElements'
+import { useHistory } from 'react-router-dom';
 
 const SignUp = () => {
 
+const history = useHistory();
 let customerinfo = [];
-let addressinfo = [];
-        // example {id:1592304983049, title: 'Deadpool', year: 2015}
 const addCustomer = (ev)=>{
-  ev.preventDefault();  //to stop the form submitting
+  ev.preventDefault();
   let customer = {
   count: customerinfo.length++,
   name: document.getElementById('name').value,
   phone_num: document.getElementById('phone_num').value,
   password: document.getElementById('password').value,
-  online: false
-  }
-  let address = {
-  count: customerinfo.length++,
+  online: false,
   addresses: document.getElementById('addresses').value,
   city: document.getElementById('city').value,
   state: document.getElementById('state').value,
@@ -24,9 +21,7 @@ const addCustomer = (ev)=>{
   zipcode: document.getElementById('zipcode').value,
   }
   customerinfo.push(customer);
-  addressinfo.push(address);
-  document.forms[0].reset(); // to clear the form for the next entries
-  //document.querySelector('form').reset();
+  history.push("/signin");
 }
 
   return (
