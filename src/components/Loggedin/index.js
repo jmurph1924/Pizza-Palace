@@ -61,15 +61,10 @@ import * as Realm from "realm-web";
     );
   }
 
-  function refreshPage() {
-    window.location.reload(false);
-  }
-
 export default function Loggedin() {
 
   const [Customers, setCustomers] = useState([]);
 
-  
   useEffect(() => {
     async function fetchdata(){
     const app = new Realm.App({id: "pizzapalace-hyock"});
@@ -85,7 +80,6 @@ export default function Loggedin() {
   fetchdata();
   }, [])
 
-
   return (
     <>
       <SigninContainer>
@@ -97,7 +91,7 @@ export default function Loggedin() {
               <FormH2> Customer Information</FormH2>
               {Customers && 
                 Customers.map((Customers) => {
-                return <FormLabel htmlFor='for' key = {Customers._id}> {refreshPage} {Customers.name}  </FormLabel>
+                return <FormLabel htmlFor='for' key = {Customers._id}> {Customers.name}  </FormLabel>
               })}
               {Customers && 
                 Customers.map((Customers) => {
