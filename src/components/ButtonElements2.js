@@ -24,6 +24,11 @@ export const Button = styled.button`
         };
     }
 
+    &.active {
+        background: #C01717;
+        color: white;
+    }
+
     ${({ active }) =>
     active &&
     `

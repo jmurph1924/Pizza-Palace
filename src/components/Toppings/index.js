@@ -1,10 +1,44 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Button } from '../ButtonElements2'
 import { InfoContainer, InfoWrapper, InfoRow, Column1, Column2, TextWrapper, Heading, BtnWrap, ImgWrap, Img, Subtitle} from './ToppingsElements';
 
 const ToppingsSection = ({lightBg, id, imgStart, lightText, headline, 
-   buttonLabel1, buttonLabel2, buttonLabel3, buttonLabel4, buttonLabel5, buttonLabel6, buttonLabel7, buttonLabel8,
-  alt, img, primary, dark, dark2, darkText, description}) => {
+  alt, img, darkText, description}) => {
+
+    const [state, setState] = useState("");
+    const [sausage, setSausage] = useState("");
+    const [chicken, setChicken] = useState("");
+    const [peppers, setPeppers] = useState("");
+    const [blackolives, setBlackOlives] = useState("");
+    const [garlic, setGarlic] = useState("");
+    const [onions, setOnions] = useState("");
+    const [tomatoes, setTomatoes] = useState("");
+
+    const toggleAccordion = () => {
+      setState(state === "" ? "active" : "");
+    }
+    const toggleSausage = () => {
+      setSausage(sausage === "" ? "active" : ""); 
+    }
+    const toggleChicken = () => {
+      setChicken(chicken === "" ? "active" : ""); 
+    }
+    const togglePeppers = () => {
+      setPeppers(peppers === "" ? "active" : "");
+    }
+    const toggleBlackOlives = () => {
+      setBlackOlives(blackolives === "" ? "active" : ""); 
+    }
+    const toggleGarlic = () => {
+      setGarlic(garlic === "" ? "active" : ""); 
+    }
+    const toggleOnions = () => {
+      setOnions(onions === "" ? "active" : ""); 
+    }
+    const toggleTomatoes = () => {
+      setTomatoes(tomatoes === "" ? "active" : ""); 
+    }
+
   return (
     <>
       <InfoContainer lightBg={lightBg} id={id}>
@@ -15,107 +49,43 @@ const ToppingsSection = ({lightBg, id, imgStart, lightText, headline,
                 <Heading lightText={lightText}>{headline}</Heading>
                 <Subtitle darkText={darkText}>{description}</Subtitle>
                 <BtnWrap>
-                  <Button to='home'
-                  smooth={true}
-                  duration={500}
-                  spy={true}
-                  exact='true'
-                  offset={-80}
-                  primary={primary ? 1 : 0}
-                  dark={dark ? 1 : 0}
-                  dark2={dark2 ? 1 : 0}
-                  >{buttonLabel1}
+                  <Button onClick={toggleAccordion} className={`${state}`}>
+                    Pepperoni
                   </Button>
                 </BtnWrap>
                 <BtnWrap>
-                  <Button to='home'
-                  smooth={true}
-                  duration={500}
-                  spy={true}
-                  exact='true'
-                  offset={-80}
-                  primary={primary ? 1 : 0}
-                  dark={dark ? 1 : 0}
-                  dark2={dark2 ? 1 : 0}
-                  >{buttonLabel2}
+                  <Button onClick={toggleSausage} className={`${sausage}`}>
+                    Sausage
                   </Button>
                 </BtnWrap>
                 <BtnWrap>
-                  <Button to='home'
-                  smooth={true}
-                  duration={500}
-                  spy={true}
-                  exact='true'
-                  offset={-80}
-                  primary={primary ? 1 : 0}
-                  dark={dark ? 1 : 0}
-                  dark2={dark2 ? 1 : 0}
-                  >{buttonLabel3}
+                  <Button onClick={toggleChicken} className={`${chicken}`}>
+                    Chicken
                   </Button>
                 </BtnWrap>
                 <BtnWrap>
-                  <Button to='home'
-                  smooth={true}
-                  duration={500}
-                  spy={true}
-                  exact='true'
-                  offset={-80}
-                  primary={primary ? 1 : 0}
-                  dark={dark ? 1 : 0}
-                  dark2={dark2 ? 1 : 0}
-                  >{buttonLabel4}
+                  <Button onClick={togglePeppers} className={`${peppers}`}>
+                    Peppers
                   </Button>
                 </BtnWrap>
                 <BtnWrap>
-                  <Button to='home'
-                  smooth={true}
-                  duration={500}
-                  spy={true}
-                  exact='true'
-                  offset={-80}
-                  primary={primary ? 1 : 0}
-                  dark={dark ? 1 : 0}
-                  dark2={dark2 ? 1 : 0}
-                  >{buttonLabel5}
+                  <Button onClick={toggleBlackOlives} className={`${blackolives}`}>
+                    Black Olives
                   </Button>
                 </BtnWrap>
                 <BtnWrap>
-                  <Button to='home'
-                  smooth={true}
-                  duration={500}
-                  spy={true}
-                  exact='true'
-                  offset={-80}
-                  primary={primary ? 1 : 0}
-                  dark={dark ? 1 : 0}
-                  dark2={dark2 ? 1 : 0}
-                  >{buttonLabel6}
+                  <Button onClick={toggleGarlic} className={`${garlic}`}>
+                    Garlic
                   </Button>
                 </BtnWrap>
                 <BtnWrap>
-                  <Button to='home'
-                  smooth={true}
-                  duration={500}
-                  spy={true}
-                  exact='true'
-                  offset={-80}
-                  primary={primary ? 1 : 0}
-                  dark={dark ? 1 : 0}
-                  dark2={dark2 ? 1 : 0}
-                  >{buttonLabel7}
+                  <Button onClick={toggleOnions} className={`${onions}`}>
+                    Onions
                   </Button>
                 </BtnWrap>
                 <BtnWrap>
-                  <Button to='home'
-                  smooth={true}
-                  duration={500}
-                  spy={true}
-                  exact='true'
-                  offset={-80}
-                  primary={primary ? 1 : 0}
-                  dark={dark ? 1 : 0}
-                  dark2={dark2 ? 1 : 0}
-                  >{buttonLabel8}
+                  <Button onClick={toggleTomatoes} className={`${tomatoes}`}>
+                    Diced Tomatoes
                   </Button>
                 </BtnWrap>
               </TextWrapper>

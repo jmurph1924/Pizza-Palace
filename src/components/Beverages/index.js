@@ -1,10 +1,41 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Button } from '../ButtonElements2'
 import { InfoContainer, InfoWrapper, InfoRow, Column1, Column2, TextWrapper, Heading, BtnWrap, ImgWrap, Img, Subtitle } from './BeveragesElements';
 
 const BeveragesSection = ({lightBg, id, imgStart, topLine, lightText, headline, darkText,
    buttonLabel1, buttonLabel2, buttonLabel3, buttonLabel4, buttonLabel5, buttonLabel6, buttonLabel7,
   alt, img, primary, dark, dark2, description }) => {
+
+    const [coke, setCoke] = useState("");
+    const [drpepper, setDrpepper] = useState("");
+    const [sevenup, setSevenup] = useState("");
+    const [bargs, setBargs] = useState("");
+    const [Sweettea, setSweettea] = useState("");
+    const [Diettea, setDiettea] = useState("");
+    const [Water, setWater] = useState("");
+
+    const toggleCoke = () => {
+      setCoke(coke === "" ? "active" : "");
+    }
+    const toggleDrpepper = () => {
+      setDrpepper(drpepper === "" ? "active" : ""); 
+    }
+    const toggleSevenup = () => {
+      setSevenup(sevenup === "" ? "active" : ""); 
+    }
+    const toggleBargs = () => {
+      setBargs(bargs === "" ? "active" : "");
+    }
+    const toggleSweettea = () => {
+      setSweettea(Sweettea === "" ? "active" : ""); 
+    }
+    const toggleDiettea = () => {
+      setDiettea(Diettea === "" ? "active" : ""); 
+    }
+    const toggleWater = () => {
+      setWater(Water === "" ? "active" : ""); 
+    }
+
   return (
     <>
       <InfoContainer lightBg={lightBg} id={id}>
@@ -15,94 +46,38 @@ const BeveragesSection = ({lightBg, id, imgStart, topLine, lightText, headline, 
                 <Heading lightText={lightText}>{headline}</Heading>
                 <Subtitle darkText={darkText}>{description}</Subtitle>
                 <BtnWrap>
-                  <Button to='home'
-                  smooth={true}
-                  duration={500}
-                  spy={true}
-                  exact='true'
-                  offset={-80}
-                  primary={primary ? 1 : 0}
-                  dark={dark ? 1 : 0}
-                  dark2={dark2 ? 1 : 0}
-                  >{buttonLabel1}
+                  <Button onClick={toggleCoke} className={`${coke}`}>
+                    Coke
                   </Button>
                 </BtnWrap>
                 <BtnWrap>
-                  <Button to='home'
-                  smooth={true}
-                  duration={500}
-                  spy={true}
-                  exact='true'
-                  offset={-80}
-                  primary={primary ? 1 : 0}
-                  dark={dark ? 1 : 0}
-                  dark2={dark2 ? 1 : 0}
-                  >{buttonLabel2}
+                  <Button onClick={toggleDrpepper} className={`${drpepper}`}>
+                    Dr Pepper
                   </Button>
                 </BtnWrap>
                 <BtnWrap>
-                  <Button to='home'
-                  smooth={true}
-                  duration={500}
-                  spy={true}
-                  exact='true'
-                  offset={-80}
-                  primary={primary ? 1 : 0}
-                  dark={dark ? 1 : 0}
-                  dark2={dark2 ? 1 : 0}
-                  >{buttonLabel3}
+                  <Button onClick={toggleSevenup} className={`${sevenup}`}>
+                    Seven Up
                   </Button>
                 </BtnWrap>
                 <BtnWrap>
-                  <Button to='home'
-                  smooth={true}
-                  duration={500}
-                  spy={true}
-                  exact='true'
-                  offset={-80}
-                  primary={primary ? 1 : 0}
-                  dark={dark ? 1 : 0}
-                  dark2={dark2 ? 1 : 0}
-                  >{buttonLabel4}
+                  <Button onClick={toggleBargs} className={`${bargs}`}>
+                    Bargs
                   </Button>
                 </BtnWrap>
                 <BtnWrap>
-                  <Button to='home'
-                  smooth={true}
-                  duration={500}
-                  spy={true}
-                  exact='true'
-                  offset={-80}
-                  primary={primary ? 1 : 0}
-                  dark={dark ? 1 : 0}
-                  dark2={dark2 ? 1 : 0}
-                  >{buttonLabel5}
+                  <Button onClick={toggleSweettea} className={`${Sweettea}`}>
+                    Sweet Tea
                   </Button>
                 </BtnWrap>
                 <BtnWrap>
-                  <Button to='home'
-                  smooth={true}
-                  duration={500}
-                  spy={true}
-                  exact='true'
-                  offset={-80}
-                  primary={primary ? 1 : 0}
-                  dark={dark ? 1 : 0}
-                  dark2={dark2 ? 1 : 0}
-                  >{buttonLabel6}
+                  <Button onClick={toggleDiettea} className={`${Diettea}`}>
+                    Diet tea
                   </Button>
                 </BtnWrap>
                 <BtnWrap>
-                  <Button to='home'
-                  smooth={true}
-                  duration={500}
-                  spy={true}
-                  exact='true'
-                  offset={-80}
-                  primary={primary ? 1 : 0}
-                  dark={dark ? 1 : 0}
-                  dark2={dark2 ? 1 : 0}
-                  >{buttonLabel7}
+                  <Button onClick={toggleWater} className={`${Water}`}>
+                    Water
                   </Button>
                 </BtnWrap>
               </TextWrapper>
