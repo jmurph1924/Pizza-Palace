@@ -7,6 +7,9 @@ import Dropdown2 from './Dropdown2';
 import * as Realm from "realm-web";
 
   const types = ["Update Customer Information", "Update Card"];
+  
+
+  
 
   function ToggleGroup() {
     const [active, setActive] = useState();
@@ -61,9 +64,25 @@ import * as Realm from "realm-web";
     );
   }
 
-export default function Loggedin() {
 
+
+
+
+  function Rendering() {
+  const [state, setState] = useState("");
+  const [togglestate, SettoggleState] = useState(false);
   const [Customers, setCustomers] = useState([]);
+
+  const toggleAccordion = () => {
+    if(togglestate === false){
+      SettoggleState(true);
+      setState(state === "" ? "active" : "");
+    }
+    else{
+      SettoggleState(false);
+      setState(state === "" ? "active" : "");
+    }
+  }
 
   useEffect(() => {
     async function fetchdata(){
@@ -80,16 +99,24 @@ export default function Loggedin() {
   fetchdata();
   }, [])
 
-  return (
-    <>
-      <SigninContainer>
-        <SigninWrapper>
-          <FormWrap>
-            <FormContent>
-            <Form action='#'>
-              <FormH1> A Great Pizza is On the Way</FormH1>
-              <FormH2> Customer Information</FormH2>
-              {Customers && 
+    if(togglestate === false){
+      return(
+        <>
+          {toggleAccordion}
+          {toggleAccordion}
+          <Button onClick={toggleAccordion} className={`${state}`}>
+            Reveal Customer Information
+          </Button> 
+        </>
+      )
+    }
+    else{
+      return(
+      <>
+          <Button onClick={toggleAccordion} className={`${state}`}>
+            Hide Information
+          </Button>
+          {Customers && 
                 Customers.map((Customers) => {
                 return <FormLabel htmlFor='for' key = {Customers._id}> {Customers.name}  </FormLabel>
               })}
@@ -112,7 +139,26 @@ export default function Loggedin() {
               {Customers && 
                 Customers.map((Customers) => {
                 return <FormLabel htmlFor='for' key = {Customers._id}> {Customers.zipcode}  </FormLabel>
-              })}
+              })} 
+        </>
+      )
+    }
+  }
+
+export default function Loggedin() {
+
+  
+
+  return (
+    <>
+      <SigninContainer>
+        <SigninWrapper>
+          <FormWrap>
+            <FormContent>
+            <Form action='#'>
+              <FormH1> A Great Pizza is On the Way</FormH1>
+              <FormH2> Customer Information</FormH2>
+              {Rendering()}
               <FormLabel htmlFor='for'></FormLabel>
               <FormLabel htmlFor='for'></FormLabel>
               <FormLabel htmlFor='for'></FormLabel>
