@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import {Link as LinkS} from 'react-scroll';
+import {Link as LinkR} from 'react-router-dom';
 
 export const DropdownContainer = styled.aside`
     background: rgba(0,0,0);
@@ -65,4 +66,17 @@ export const FormH2 = styled.h1`
   font-weight: 400;
   text-align: center;
   text-decoration: underline;
+`
+export const FormButton2 = styled(LinkR)`
+  background: #C01717;
+  display: flex;
+  text-decoration: none;
+  justify-content: center;
+  padding: 16px 0;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+    margin-top: 20px;
 `

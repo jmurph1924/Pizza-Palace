@@ -1,15 +1,26 @@
-import React, { useState } from "react";
+import React, {useState, useCallback} from 'react'
 import { Button } from '../ButtonElements2'
 import { InfoContainer, InfoWrapper, InfoRow, Column1, Column2, TextWrapper, Heading, Subtitle, BtnWrap, ImgWrap, Img } from './InfoElements';
+import * as Realm from "realm-web";
 
-const types = ["Extra Large", "Large", "Medium", "Small"];
+
+const InfoSection = ({lightBg, id, imgStart, lightText, headline, darkText, description, alt, img}) => {
+
+  const types = ["Extra Large", "Large", "Medium", "Small"];
+  const [active, setActive] = useState();
+  const [isSending, setIsSending] = useState(false)
+
+function activation(typer){
+  setActive(typer)
+  sendInfo()
+}
 
 function ToggleGroup() {
-  const [active, setActive] = useState();
+  
   return (
     <BtnWrap>
       {types.map((type) => (
-        <Button active={active === type} onClick={() => setActive(type)}>
+        <Button active={active === type} onClick={() => activation(type)}>
           {type}
         </Button>
       ))}
@@ -17,7 +28,22 @@ function ToggleGroup() {
   );
 }
 
-const InfoSection = ({lightBg, id, imgStart, lightText, headline, darkText, description, buttonLabel1, buttonLabel2, buttonLabel3, buttonLabel4, alt, img, primary, dark, dark2, toggle }) => {
+  const sendInfo = useCallback(async () => {
+    // don't send again while we are sending
+    if (isSending) return
+    // update state
+    setIsSending(true)
+    // send the actual request
+    const app = new Realm.App({id: "pizzapalace-hyock"});
+    const credentials = Realm.Credentials.anonymous();
+  
+    const user = await app.logIn(credentials);
+    await user.functions.SizeCreator(active);
+    
+    // once the request is sent, update state again
+    setIsSending(false)
+  }, [active, isSending])
+
   return (
     <>
       <InfoContainer lightBg={lightBg} id={id}>
@@ -28,6 +54,9 @@ const InfoSection = ({lightBg, id, imgStart, lightText, headline, darkText, desc
                 <Heading lightText={lightText}>{headline}</Heading>
                 <Subtitle darkText={darkText}>{description}</Subtitle>
                 <ToggleGroup />
+                <BtnWrap>
+                  <Button onClick={sendInfo}> Click To Save </Button>
+                </BtnWrap>
               </TextWrapper>
             </Column1>
             <Column2>

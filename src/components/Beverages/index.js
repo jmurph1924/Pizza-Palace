@@ -1,40 +1,43 @@
-import React, {useState} from 'react'
+import React, {useState, useCallback} from 'react'
 import { Button } from '../ButtonElements2'
 import { InfoContainer, InfoWrapper, InfoRow, Column1, Column2, TextWrapper, Heading, BtnWrap, ImgWrap, Img, Subtitle } from './BeveragesElements';
+import * as Realm from "realm-web";
+
 
 const BeveragesSection = ({lightBg, id, imgStart, topLine, lightText, headline, darkText,
-   buttonLabel1, buttonLabel2, buttonLabel3, buttonLabel4, buttonLabel5, buttonLabel6, buttonLabel7,
-  alt, img, primary, dark, dark2, description }) => {
+  alt, img, description }) => {
 
-    const [coke, setCoke] = useState("");
-    const [drpepper, setDrpepper] = useState("");
-    const [sevenup, setSevenup] = useState("");
-    const [bargs, setBargs] = useState("");
-    const [Sweettea, setSweettea] = useState("");
-    const [Diettea, setDiettea] = useState("");
-    const [Water, setWater] = useState("");
+    const types = ["Coke", "Bargs", "Sweet Tea", "Water"];
+    const [active, setActive] = useState();
+    const [isSending, setIsSending] = useState(false)
 
-    const toggleCoke = () => {
-      setCoke(coke === "" ? "active" : "");
+    function ToggleGroup() {
+      return (
+        <BtnWrap>
+          {types.map((type) => (
+            <Button active={active === type} onClick={() => {setActive(type); sendInfo()}}>
+              {type}
+            </Button>
+          ))}
+        </BtnWrap>
+      );
     }
-    const toggleDrpepper = () => {
-      setDrpepper(drpepper === "" ? "active" : ""); 
-    }
-    const toggleSevenup = () => {
-      setSevenup(sevenup === "" ? "active" : ""); 
-    }
-    const toggleBargs = () => {
-      setBargs(bargs === "" ? "active" : "");
-    }
-    const toggleSweettea = () => {
-      setSweettea(Sweettea === "" ? "active" : ""); 
-    }
-    const toggleDiettea = () => {
-      setDiettea(Diettea === "" ? "active" : ""); 
-    }
-    const toggleWater = () => {
-      setWater(Water === "" ? "active" : ""); 
-    }
+
+    const sendInfo = useCallback(async () => {
+      // don't send again while we are sending
+      if (isSending) return
+      // update state
+      setIsSending(true)
+      // send the actual request
+      const app = new Realm.App({id: "pizzapalace-hyock"});
+      const credentials = Realm.Credentials.anonymous();
+    
+      const user = await app.logIn(credentials);
+      await user.functions.BeverageCreator(active);
+      
+      // once the request is sent, update state again
+      setIsSending(false)
+    }, [active, isSending])
 
   return (
     <>
@@ -45,40 +48,9 @@ const BeveragesSection = ({lightBg, id, imgStart, topLine, lightText, headline, 
               <TextWrapper>
                 <Heading lightText={lightText}>{headline}</Heading>
                 <Subtitle darkText={darkText}>{description}</Subtitle>
+                <ToggleGroup/>
                 <BtnWrap>
-                  <Button onClick={toggleCoke} className={`${coke}`}>
-                    Coke
-                  </Button>
-                </BtnWrap>
-                <BtnWrap>
-                  <Button onClick={toggleDrpepper} className={`${drpepper}`}>
-                    Dr Pepper
-                  </Button>
-                </BtnWrap>
-                <BtnWrap>
-                  <Button onClick={toggleSevenup} className={`${sevenup}`}>
-                    Seven Up
-                  </Button>
-                </BtnWrap>
-                <BtnWrap>
-                  <Button onClick={toggleBargs} className={`${bargs}`}>
-                    Bargs
-                  </Button>
-                </BtnWrap>
-                <BtnWrap>
-                  <Button onClick={toggleSweettea} className={`${Sweettea}`}>
-                    Sweet Tea
-                  </Button>
-                </BtnWrap>
-                <BtnWrap>
-                  <Button onClick={toggleDiettea} className={`${Diettea}`}>
-                    Diet tea
-                  </Button>
-                </BtnWrap>
-                <BtnWrap>
-                  <Button onClick={toggleWater} className={`${Water}`}>
-                    Water
-                  </Button>
+                  <Button onClick={sendInfo}> Click To Save </Button>
                 </BtnWrap>
               </TextWrapper>
             </Column1>

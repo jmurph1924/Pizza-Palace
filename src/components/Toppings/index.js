@@ -1,11 +1,12 @@
-import React, {useState} from 'react'
+import React, {useState, useCallback} from 'react'
 import { Button } from '../ButtonElements2'
 import { InfoContainer, InfoWrapper, InfoRow, Column1, Column2, TextWrapper, Heading, BtnWrap, ImgWrap, Img, Subtitle} from './ToppingsElements';
+import * as Realm from "realm-web";
 
 const ToppingsSection = ({lightBg, id, imgStart, lightText, headline, 
   alt, img, darkText, description}) => {
 
-    const [state, setState] = useState("");
+    const [Pepperoni, setPepperoni] = useState("");
     const [sausage, setSausage] = useState("");
     const [chicken, setChicken] = useState("");
     const [peppers, setPeppers] = useState("");
@@ -13,31 +14,201 @@ const ToppingsSection = ({lightBg, id, imgStart, lightText, headline,
     const [garlic, setGarlic] = useState("");
     const [onions, setOnions] = useState("");
     const [tomatoes, setTomatoes] = useState("");
+    const [Pepperoni1, setPepperoni1] = useState("");
+    const [sausage1, setSausage1] = useState("");
+    const [chicken1, setChicken1] = useState("");
+    const [peppers1, setPeppers1] = useState("");
+    const [blackolives1, setBlackOlives1] = useState("");
+    const [garlic1, setGarlic1] = useState("");
+    const [onions1, setOnions1] = useState("");
+    const [tomatoes1, setTomatoes1] = useState("");
+    const [checker, setChecker] = useState(1);
+    const [isSending, setIsSending] = useState(false)
 
     const toggleAccordion = () => {
-      setState(state === "" ? "active" : "");
+      if(checker <= 4)
+      {
+        setPepperoni(Pepperoni ===  "" ? "active" : "");
+        setPepperoni1(Pepperoni1 === "" ? "Pepperoni" : "");
+        if(Pepperoni === "")
+        {
+          setChecker(checker + 1)
+        }
+        else
+        {
+          setChecker(checker - 1)
+        }
+      }
+      if(checker >= 5 && Pepperoni === "active")
+      {
+        setPepperoni(Pepperoni ===  "" ? "active" : "");
+        setPepperoni1(Pepperoni1 === "" ? "Pepperoni" : "");
+        setChecker(checker - 1)
+      }
     }
     const toggleSausage = () => {
-      setSausage(sausage === "" ? "active" : ""); 
+      if(checker <= 4)
+      {
+        setSausage(sausage ===  "" ? "active" : "");
+        setSausage1(sausage1 === "" ? "Sausage" : "");
+        if(sausage === "")
+        {
+          setChecker(checker + 1)
+        }
+        else
+        {
+          setChecker(checker - 1)
+        }
+      }
+      if(checker >= 5 && sausage === "active")
+      {
+        setSausage(sausage ===  "" ? "active" : "");
+        setSausage1(sausage1 === "" ? "Sausage" : "");
+        setChecker(checker - 1)
+      }
     }
     const toggleChicken = () => {
-      setChicken(chicken === "" ? "active" : ""); 
+      if(checker <= 4)
+      {
+        setChicken(chicken ===  "" ? "active" : "");
+        setChicken1(chicken1 === "" ? "Chicken" : "");
+        if(chicken === "")
+        {
+          setChecker(checker + 1)
+        }
+        else
+        {
+          setChecker(checker - 1)
+        }
+      }
+      if(checker >= 5 && chicken === "active")
+      {
+        setChicken(chicken ===  "" ? "active" : "");
+        setChicken1(chicken1 === "" ? "Chicken" : "");
+        setChecker(checker - 1)
+      }
     }
     const togglePeppers = () => {
-      setPeppers(peppers === "" ? "active" : "");
+      if(checker <= 4)
+      {
+        setPeppers(peppers ===  "" ? "active" : "");
+        setPeppers1(peppers1 ===  "" ? "Peppers" : "");
+        if(peppers === "")
+        {
+          setChecker(checker + 1)
+        }
+        else
+        {
+          setChecker(checker - 1)
+        }
+      }
+      if(checker >= 5 && peppers === "active")
+      {
+        setPeppers(peppers ===  "" ? "active" : "");
+        setPeppers1(peppers1 ===  "" ? "Peppers" : "");
+        setChecker(checker - 1)
+      }
     }
     const toggleBlackOlives = () => {
-      setBlackOlives(blackolives === "" ? "active" : ""); 
+      if(checker <= 4)
+      {
+        setBlackOlives(blackolives ===  "" ? "active" : "");
+        setBlackOlives1(blackolives1 ===  "" ? "Black Olives" : "");
+        if(blackolives === "")
+        {
+          setChecker(checker + 1)
+        }
+        else
+        {
+          setChecker(checker - 1)
+        }
+      }
+      if(checker >= 5 && blackolives === "active")
+      {
+        setBlackOlives(blackolives ===  "" ? "active" : "");
+        setBlackOlives1(blackolives1 ===  "" ? "Black Olives" : "");
+        setChecker(checker - 1)
+      }
     }
     const toggleGarlic = () => {
-      setGarlic(garlic === "" ? "active" : ""); 
+      if(checker <= 4)
+      {
+        setGarlic(garlic ===  "" ? "active" : "");
+        setGarlic1(garlic1 ===  "" ? "Garlic" : "");
+        if(garlic === "")
+        {
+          setChecker(checker + 1)
+        }
+        else
+        {
+          setChecker(checker - 1)
+        }
+      }
+      if(checker >= 5 && garlic === "active")
+      {
+        setGarlic(garlic ===  "" ? "active" : "");
+        setGarlic1(garlic1 ===  "" ? "Garlic" : "");
+        setChecker(checker - 1)
+      }
     }
     const toggleOnions = () => {
-      setOnions(onions === "" ? "active" : ""); 
+      if(checker <= 4)
+      {
+        setOnions(onions ===  "" ? "active" : "");
+        setOnions1(onions1 ===  "" ? "Onions" : "");
+        if(onions === "")
+        {
+          setChecker(checker + 1)
+        }
+        else
+        {
+          setChecker(checker - 1)
+        }
+      }
+      if(checker >= 5 && onions === "active")
+      {
+        setOnions(onions ===  "" ? "active" : "");
+        setOnions1(onions1 ===  "" ? "Onions" : "");
+        setChecker(checker - 1)
+      }
     }
     const toggleTomatoes = () => {
-      setTomatoes(tomatoes === "" ? "active" : ""); 
+      if(checker <= 4)
+      {
+        setTomatoes(tomatoes ===  "" ? "active" : "");
+        setTomatoes1(tomatoes1 ===  "" ? "Diced Tomatoes" : "");
+        if(tomatoes === "active")
+        {
+          setChecker(checker + 1)
+        }
+        else
+        {
+          setChecker(checker - 1)
+        }
+      }
+      if(checker >= 5 && tomatoes === "active")
+      {
+        setTomatoes(tomatoes ===  "" ? "active" : "");
+        setTomatoes1(tomatoes1 ===  "" ? "Diced Tomatoes" : "");
+        setChecker(checker - 1)
+      }
     }
+
+    const sendInfo = useCallback(async () => {
+      // don't send again while we are sending
+      if (isSending) return
+      // update state
+      setIsSending(true)
+      // send the actual request
+      const app = new Realm.App({id: "pizzapalace-hyock"});
+      const credentials = Realm.Credentials.anonymous();
+    
+      const user = await app.logIn(credentials);
+      await user.functions.ToppingsCreator(Pepperoni1,sausage1,chicken1,peppers1,blackolives1,garlic1,onions1,tomatoes1);
+      
+      // once the request is sent, update state again
+      setIsSending(false)
+    }, [Pepperoni1,sausage1,chicken1,peppers1,blackolives1,garlic1,onions1,tomatoes1, isSending])
 
   return (
     <>
@@ -49,7 +220,7 @@ const ToppingsSection = ({lightBg, id, imgStart, lightText, headline,
                 <Heading lightText={lightText}>{headline}</Heading>
                 <Subtitle darkText={darkText}>{description}</Subtitle>
                 <BtnWrap>
-                  <Button onClick={toggleAccordion} className={`${state}`}>
+                  <Button onClick={toggleAccordion} className={`${Pepperoni}`}>
                     Pepperoni
                   </Button>
                 </BtnWrap>
@@ -87,6 +258,9 @@ const ToppingsSection = ({lightBg, id, imgStart, lightText, headline,
                   <Button onClick={toggleTomatoes} className={`${tomatoes}`}>
                     Diced Tomatoes
                   </Button>
+                </BtnWrap>
+                <BtnWrap>
+                  <Button onClick={sendInfo}> Click To Save </Button>
                 </BtnWrap>
               </TextWrapper>
             </Column1>

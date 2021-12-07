@@ -161,8 +161,13 @@ export default function Loggedin() {
               {Rendering()}
               <FormLabel htmlFor='for'></FormLabel>
               <FormLabel htmlFor='for'></FormLabel>
+              <FormH2>Card:</FormH2>
+              <FormLabel htmlFor='for'>Credit Card Number: 123412345678</FormLabel>
+              <FormLabel htmlFor='for'>Date: 01/22</FormLabel>
+              <FormLabel htmlFor='for'>CVC: 123</FormLabel>
               <FormLabel htmlFor='for'></FormLabel>
               <FormLabel htmlFor='for'></FormLabel>
+              
               <ToggleGroup/>
 
               <FormButton type='submit'>Submit Changes</FormButton>
